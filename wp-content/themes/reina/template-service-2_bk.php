@@ -47,28 +47,15 @@ if (!empty($request)) {
         <div class="list_product_item">
 
             <?php
-
-
-
             if ($count > 0) {
-
-
-
-
                 $number = 0;
                 foreach ($product_categories as $product_category) {
                     $number++;
             ?>
                     <?php
                     echo '<section id="phela' . $number . '">';
-
                     echo '<div class="product_item_id">';
-
                     echo '<h4>' . $product_category->name . '</h4>';
-
-
-
-
                     $args = array(
                         'posts_per_page' => -1,
                         'tax_query' => array(
@@ -83,9 +70,7 @@ if (!empty($request)) {
                         'post_type' => 'product',
                         'orderby' => 'title,'
                     );
-
                     $products = new WP_Query($args);
-
                     echo "<div class='listproduct'>";
                     while ($products->have_posts()) {
                         $products->the_post();
