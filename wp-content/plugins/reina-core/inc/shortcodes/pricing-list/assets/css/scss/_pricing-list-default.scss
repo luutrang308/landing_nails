@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Pricing List shortcode styles
+   ========================================================================== */
+
+.qodef-pricing-list {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-items {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.qodef-m-item {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 38px;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	
+	.qodef-e-image {
+		flex-shrink: 0;
+		max-width: 62px;
+		margin-right: 14px;
+		
+		img {
+			display: block;
+		}
+	}
+
+	.qodef-e-svg {
+		@include qodefRelativeLayout();
+		width: 70px;
+		margin-right: 15px;
+		flex-shrink: 0;
+		@include qodefSvgStyle(1.6);
+	}
+	
+	.qodef-e-content {
+		@include qodefRelativeLayout();
+	}
+	
+	.qodef-e-heading {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		
+		> * {
+			line-height: inherit;
+		}
+	}
+	
+	.qodef-e-title {
+		margin: 0;
+		flex-shrink: 0;
+	}
+	
+	.qodef-e-line {
+		display: block;
+		margin: 0 4px 5px;
+		width: calc(100% - 8px);
+		height: 1px;
+		background-color: $border-color;
+	}
+	
+	.qodef-e-text {
+		margin: 2px 0 0;
+	}
+	
+	.qodef-e-price {
+		display: inline-flex;
+		align-items: center;
+		flex-shrink: 0;
+		line-height: 1;
+	}
+	
+	.qodef-e-price-label {
+		margin-top: 10px;
+		margin-right: 9px;
+		color: $footer-text-color;
+	}
+	
+	.qodef-e-price-value {
+		font-family: $heading-font;
+		font-size: 32px;
+		font-weight: 500;
+		color: $heading-color;
+	}
+
+	&.qodef--light {
+
+		.qodef-e-title,
+		.qodef-e-price-value {
+			color: #fff;
+		}
+
+		.qodef-e-line {
+			background-color: rgba(#fff, .1);
+		}
+
+		.qodef-e-price-label,
+		.qodef-e-text {
+			color: #bcbcbc;
+		}
+	}
+}

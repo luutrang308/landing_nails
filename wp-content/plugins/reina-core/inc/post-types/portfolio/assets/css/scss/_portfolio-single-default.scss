@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Portfolio Single styles
+   ========================================================================== */
+
+.qodef-portfolio-single {
+	
+	.qodef-media {
+		
+		iframe {
+			max-height: calc(56.25vw);
+		}
+	}
+ 
+	.qodef-portfolio-title {
+		margin: 0 0 15px;
+	}
+	
+	.qodef-portfolio-info {
+  
+		> * {
+			display: flex;
+			align-items: flex-start;
+			margin-bottom: 12px;
+			flex-direction: column;
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		
+		.qodef-e-title {
+			margin: 0 0 5px 0;
+		}
+		
+		p, a {
+			margin: 0;
+			color: $text-color;
+		}
+        
+        .qodef-e-category {
+            
+            &:after {
+                content: "/";
+                margin: 0 3px 0 1px;
+            }
+            
+            &:last-child:after {
+                display: none;
+            }
+        }
+	}
+}

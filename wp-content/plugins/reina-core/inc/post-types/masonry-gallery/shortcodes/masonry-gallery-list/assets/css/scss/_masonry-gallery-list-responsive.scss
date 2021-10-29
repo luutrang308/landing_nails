@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Masonry gallery shortcode responsive styles
+   ========================================================================== */
+
+.qodef-masonry-gallery-list {
+
+	.qodef-testimonials-list {
+
+		@include qodefScreenSize1600 {
+
+			.swiper-slide {
+
+				.qodef-e-text {
+					margin-top: 0;
+				}
+			}
+		}
+
+		@media only screen and (min-width: $screen-size-1281) and (max-width: $screen-size-1440) {
+			margin-top: 0;
+
+			svg {
+				width: 100px;
+			}
+
+			.swiper-pagination-bullets {
+				bottom: 131px !important;
+			}
+		}
+
+		@media only screen and (min-width: $screen-size-1025) and (max-width: $screen-size-1280) {
+			margin-top: 0;
+
+			.qodef-m-icon {
+				margin-bottom: 6px;
+			}
+
+			svg {
+				width: 80px;
+			}
+
+			.swiper-pagination-bullets {
+				bottom: 107px !important;
+			}
+		}
+
+		@include qodefScreenSize1024 {
+
+			.swiper-pagination-bullets {
+				bottom: 182px !important;
+			}
+		}
+
+		@include qodefScreenSize768 {
+
+			svg {
+				width: 100px;
+			}
+
+			.swiper-pagination-bullets {
+				bottom: 132px !important;
+			}
+		}
+
+		@include qodefScreenSize680 {
+
+			svg {
+				display: none;
+			}
+
+			.swiper-pagination-bullets {
+				bottom: 62px !important;
+			}
+		}
+	}
+}

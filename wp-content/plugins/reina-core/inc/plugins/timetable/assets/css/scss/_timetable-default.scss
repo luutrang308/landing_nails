@@ -1,0 +1,378 @@
+/* ==========================================================================
+   Timetable shortcode styles
+   ========================================================================== */
+
+.qodef-timetable--predefined {
+
+    .tabs_box_navigation {
+
+        &.sf-timetable-menu {
+            display: none;
+        }
+    }
+    
+    .tt_navigation_wrapper {
+        
+        .tt_navigation_cell {
+            
+            @media screen and (max-width: 767px) {
+                margin-bottom: 41px !important;
+            }
+            
+            @include qodefScreenSize680 {
+                margin-bottom: 20px !important;
+            }
+            
+            .tt_tabs_navigation {
+                
+                @include qodefScreenSize680 {
+                    float: none !important;
+                }
+                
+                li {
+                    display: inline-block;
+                    float: none;
+                    margin: 0 25px !important;
+                    max-height: 45px;
+                    
+                    @include qodefScreenSize1024 {
+                        margin: 0 17px !important;
+                    }
+                    
+                    @include qodefScreenSize680 {
+                        display: block;
+                    }
+                    
+                    a {
+                        @include qodefHeadingStyle(h6);
+                        margin: 0;
+                        border: 0 !important;
+                        color: #999999 !important;
+                        transition: color 0.3s ease !important;
+                    }
+                    
+                    &.ui-state-active,
+                    &.ui-state-hover {
+                        
+                        a {
+                            color: $main-color !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        .tt_tabs {
+            
+            > div:not(.tt_navigation_wrapper) {
+                position: relative;
+                
+                &:after {
+                    content: '';
+                    z-index: -1;
+                    position: absolute;
+                    display: block;
+                    left: 31px;
+                    top: 31px;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    
+    table.tt_timetable {
+        border-spacing: 0 !important;
+        border-bottom: 1px solid $border-timetable;
+
+        @include qodefScreenSize1024 {
+            display: none;
+        }
+        
+        thead {
+
+            .row_gray {
+                background-color: #efe4d8 !important;
+            }
+            
+            tr {
+                
+                th {
+                    border: 1px solid $border-timetable !important;
+                    border-width: 1px 0 1px 1px !important;
+                    font-family: $additional-text-font;
+                    font-size: 15px;
+                    font-weight: 500;
+                    letter-spacing: 0.09em;
+                    text-transform: uppercase;
+                    padding-top: 28px;
+                    padding-bottom: 27px;
+                    color: $heading-color;
+                    
+                    &:last-child {
+                        border-right: 1px solid $border-timetable !important
+                    }
+                }
+            }
+        }
+        
+        tbody {
+            
+            tr {
+
+                &:nth-child(odd) {
+                    background-color: #fef5ec !important;
+
+                    & td{
+                        background-color: #fef5ec !important;
+                    }
+                }
+
+                &:nth-child(even) {
+                    background-color: #eee4d8 !important;
+
+                    & td{
+                        background-color: #eee4d8 !important;
+                    }
+                }
+                
+                td {
+                    border-left: 1px solid $border-timetable !important;
+                    @include qodefParagraphStyle();
+                    
+                    @include qodefScreenSize1024 {
+                        font-size: 13px;
+                    }
+                    
+                    &:last-child:not(:only-child) {
+                        border-right: 1px solid $border-timetable !important;
+                    }
+
+                    &.tt_hours_column {
+                        font-family: $additional-text-font !important;
+                        font-size: $text-font-size;
+                        font-weight: 500;
+                        color: $heading-color;
+                    }
+                }
+            }
+        }
+        
+        .event {
+            color: $heading-color;
+            background-color: #fff;
+            
+            .event_container {
+                padding-top: 23px;
+                padding-bottom: 33px;
+            }
+            
+            .event_header {
+                @include qodefHeadingStyle(h5);
+                color: $heading-color !important;
+                transition: color 0.3s ease !important;
+                text-decoration: none !important;
+                margin: 4px 0;
+                
+                @include qodefScreenSize1024 {
+                    font-size: 11px;
+                }
+            }
+            
+            .before_hour_text,
+            .after_hour_text {
+                font-family: $text-font;
+                font-size: $text-font-size;
+                color: $footer-text-color;
+                
+                @include qodefScreenSize1024 {
+                    font-size: 12px;
+                }
+            }
+            
+            .top_hour,
+            .bottom_hour {
+                display: none !important;
+            }
+            
+            .tt_tooltip_text {
+                height: auto !important;
+                top: -30px !important;
+                
+                .tt_tooltip_content {
+                    background-color: #b0d8e8 !important;
+                    color: #fff !important;
+                    width: calc(100% - 12px);
+                    box-sizing: border-box;
+                    border-radius: 0;
+                    margin: 0 auto;
+                    text-align: center;
+                    padding-top: 5px;
+                    padding-bottom: 7px;
+                    @include qodefParagraphStyle();
+                    line-height: 1.5em;
+                    
+                    .event_header {
+                        display: none;
+                    }
+                }
+                
+                .tt_tooltip_arrow {
+                    border-color: #b0d8e8 transparent !important;
+                    border-width: 7px 7px 0;
+                    bottom: -10px;
+                }
+            }
+        }
+    }
+    
+    .tt_responsive {
+        
+        .tt_timetable.small {
+
+            @include qodefScreenSize1024 {
+                display: block;
+            }
+            
+            .box_header {
+                font-size: 19px !important;
+                line-height: 1.15em !important;
+                color: $main-color !important;
+                font-family: $additional-heading-font !important;
+                font-style: italic !important;
+                text-transform: none !important;
+                letter-spacing: 0 !important;
+    
+                @include qodefScreenSize1024 {
+                    text-align: center;
+                    margin: 40px 0 0 0;
+                    font-style: normal !important;
+                }
+                
+                @include qodefScreenSize680 {
+                    text-align: center;
+                }
+            }
+            
+            ul.tt_items_list {
+                
+                li {
+                
+                }
+                
+                div.event_container {
+                    
+                    a {
+                        @include qodefHeadingStyle(h6);
+                        line-height: 30px;
+                        text-decoration: none !important;
+                    }
+                }
+                
+                div.value {
+                    @include qodefParagraphStyle();
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+}
+
+.single #qodef-page-inner .tt_event_theme_page {
+    width: calc(100% + 70px);
+    background-color: transparent;
+    padding: 0;
+    margin: 0 -35px;
+    
+    .tt_event_page_left {
+        width: 72%;
+        padding: 0 35px;
+    }
+    
+    .tt_event_page_right {
+        width: 28%;
+        padding: 0 35px;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    p {
+        color: $text-color !important;
+    }
+}
+
+.qodef-timetable-single-page {
+    #qodef-page-content {
+        #qodef-page-sidebar {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+#light-skin-timetable {
+        
+    table.tt_timetable {
+        
+        thead {
+            
+            .row_gray {
+                background-color: #fff !important;
+            }
+    
+            tr {
+                th {
+                    color: #808080;
+                }
+            }
+        }
+        
+        tbody {
+            
+            tr {
+    
+                &:nth-child(1) {
+                    background-color: #f2fafd !important;
+        
+                    & td {
+                        background-color: #f2fafd !important;
+                    }
+                }
+    
+                &:nth-child(3) {
+                    background-color: #fff9f5 !important;
+        
+                    & td {
+                        background-color: #fff9f5 !important;
+                    }
+                }
+    
+                &:nth-child(even) {
+                    background-color: #ffffff !important;
+        
+                    & td {
+                        background-color: #ffffff !important;
+                    }
+                }
+    
+                &:nth-child(odd) {
+                    background-color: unset;
+        
+                    & td {
+                        background-color: unset;
+                    }
+                }
+    
+                td.tt_hours_column{
+                    color: #808080;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Timetable shortcode styles
+   ========================================================================== */

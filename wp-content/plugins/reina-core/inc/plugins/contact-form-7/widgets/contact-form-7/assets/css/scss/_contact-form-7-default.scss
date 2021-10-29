@@ -1,0 +1,135 @@
+/* ==========================================================================
+   Contact Form 7 widget styles
+   ========================================================================== */
+
+.qodef-contact-form-7 {
+	@include qodefRelativeLayout();
+	
+	.ajax-loader {
+		position: absolute;
+		right: -10px;
+	}
+	
+	.qodef-newsletter-form {
+		position: relative;
+		display: flex;
+		margin: 0 auto;
+		max-width: 524px;
+		
+		.your-email {
+			display: inline-block;
+			width: 340px;
+			margin-right: 10px;
+		}
+		
+		input {
+			margin: 0;
+		}
+
+		button[type=submit] {
+			height: 52px;
+		}
+
+		&.qodef--light {
+			justify-content: center;
+
+			button[type=submit] {
+				color: #0e0a0a;
+				background-color: #fff;
+
+				.qodef-m-background {
+					clip-path: inset(0 100% -1px 0);
+				}
+
+				&:hover {
+					color: #fff;
+
+					.qodef-m-background {
+						clip-path: inset(0 0% -1px 0);
+					}
+				}
+			}
+		}
+	}
+
+	@include qodefScreenSize480 {
+
+		.qodef-newsletter-form {
+			flex-wrap: wrap;
+			justify-content: center;
+
+			.your-email {
+				margin: 0 0 15px;
+			}
+		}
+	}
+	
+	.qodef-contact-form {
+		
+		.qodef-cf-row {
+			display: flex;
+			justify-content: space-between;
+			
+			> * {
+				width: calc(50% - 10px);
+			}
+			
+			@include qodefScreenSize680 {
+				flex-direction: column;
+				
+				> * {
+					width: 100%;
+				}
+			}
+		}
+		
+		p {
+			margin: 0;
+		}
+		
+		br {
+			display: none;
+		}
+	}
+
+	.wpcf7 {
+
+		.qodef-nl-form-light & {
+			max-width: 520px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+
+	.wpcf7 form.invalid .wpcf7-response-output,
+	.wpcf7 form.unaccepted .wpcf7-response-output,
+	.wpcf7-not-valid-tip {
+
+		.qodef-nl-form-light & {
+			color: #fff;
+		}
+	}
+
+	.qodef-booking-form {
+
+		.wpcf7-select {
+			width: 100%;
+			appearance: none;
+		}
+
+		.wpcf7-date {
+			position: relative;
+			width: 100%;
+			height: 50px;
+			padding-left: 20px;
+			padding-right: 20px;
+			margin: 22px 0;
+			outline: 0;
+			cursor: pointer;
+		}
+
+		button[type=submit] {
+			width: 100%;
+		}
+	}
+}

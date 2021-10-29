@@ -1,0 +1,19 @@
+.qodef-blog {
+
+    &--compact {
+        
+        @include qodefScreenSize768 {
+        
+            .qodef--single {
+                max-width:100% !important;
+            }
+        }
+    
+        @include qodefScreenSize480 {
+            
+            .qodef--single {
+                max-width:100% !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,84 @@
+/* ==========================================================================
+   Pricing Table shortcode styles
+   ========================================================================== */
+
+.qodef-pricing-table {
+	@include qodefRelativeLayout();
+	background-color: #fff;
+	border: 1px solid $main-color;
+	text-align: center;
+	
+	.qodef-m-inner {
+		padding: 66px 30px 46px;
+	}
+	
+	.qodef-m-featured-title {
+		position: absolute;
+		top: 43px;
+		left: 0;
+		width: 100%;
+		color: $main-color;
+	}
+	
+	.qodef-m-title {
+		margin: 0;
+	}
+	
+	.qodef-m-price {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 0.8;
+		
+		> * {
+			margin: 0;
+			line-height: inherit;
+		}
+	}
+	
+	.qodef-m-price-value {
+		display: inline-flex;
+		align-items: flex-end;
+		padding-left: 15%;
+		color: #dcac50;
+		font-size: 80px;
+	}
+	
+	.qodef-m-price-currency {
+		position: relative;
+		top: -3px;
+		font-size: 45px;
+	}
+	
+	.qodef-m-price-period {
+		padding: 20px 0 0 5px;
+	}
+	
+	.qodef-m-content {
+		margin: 53px 0 0;
+		
+		p {
+			margin: 4px 0;
+		}
+		
+		ul {
+			list-style: none;
+			margin: 0;
+			
+			li {
+				margin-bottom: 3px;
+				
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	
+	.qodef-m-button {
+		
+		.qodef-button {
+			margin: 52px 0 0;
+		}
+	}
+}

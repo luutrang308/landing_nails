@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Image Section Info shortcode styles
+   ========================================================================== */
+
+$items-side-space: 45px;
+$overlay-offset: 50px;
+
+.qodef-image-section-info {
+	
+	&.qodef-layout--info-on-image {
+		
+		.qodef-m-inner {
+			align-items: center;
+		}
+		
+		.qodef-m-image {
+			width: 100%;
+			flex-shrink: 0;
+		}
+		
+		.qodef-m-content {
+			position: absolute;
+			width: 50%;
+			right: 0;
+			padding: 3.5% 15% 4% 4.78%;
+			color: $background-color;
+			background-color: currentColor;
+
+			> .qodef-m-text {
+				margin: 22px 0 0;
+				font-size: 19px;
+				line-height: 1.842105263157895em;
+				font-weight: 300;
+			}
+		}
+		
+		.qodef-m-svg {
+			position: absolute;
+			right: 0;
+			bottom: 20px;
+			@include qodefSvgStyle();
+		}
+		
+		.qodef-m-button {
+			margin: 32px 0 0;
+		}
+		
+		&.qodef--left {
+			
+			.qodef-m-content {
+				left: 0;
+				right: auto;
+				padding: 3.5% 4.78% 4% 15%;
+				text-align: right;
+			}
+			
+			.qodef-m-svg {
+				right: auto;
+				left: 0
+			}
+
+			@media only screen and (min-width: $screen-size-1025) {
+
+				.qodef-working-hours-list {
+					margin-left: auto;
+				}
+			}
+		}
+	}
+}

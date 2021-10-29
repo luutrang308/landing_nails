@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Newsletter styles - start
+   ========================================================================== */
+
+#qodef-footer-newsletter {
+	@include qodefRelativeLayout();
+	padding: 62px 0 56px;
+	background-color: #f7f5f3;
+	z-index: 99;
+	
+	&:after {
+		content: '';
+		position: absolute;
+		left: calc(50% - 150px);
+		bottom: 0;
+		width: 300px;
+		height: 1px;
+		background-color: $border-color;
+	}
+	
+	h5 {
+		text-align: center;
+		color: #415962;
+		margin: 0 0 17px;
+	}
+	
+	.wpcf7 {
+		position: relative;
+		display: block;
+		margin: 0 auto;
+		max-width: 524px;
+	}
+	
+	.qodef-newsletter-title {
+		margin: 0 0 17px;
+		text-align: center;
+	}
+	
+	.qodef-newsletter-form {
+		display: flex;
+		
+		.wpcf7-form-control-wrap {
+			width: 100%;
+			margin-right: 15px;
+		}
+		
+		input {
+			margin: 0;
+			font-size: 13px;
+			font-family: $text-font;
+			color: $text-color;
+		}
+		
+		.qodef-button {
+			max-height: 52px;
+			flex-shrink: 0;
+			padding: 6px 46px;
+			white-space: nowrap;
+		}
+		
+		.ajax-loader {
+			display: none;
+		}
+	}
+
+	&>*{
+		position: relative;
+		z-index: 101;
+	}
+	
+	@include qodefScreenSize680 {
+		
+		&:after {
+			left: 9%;
+			width: 82%;
+		}
+		
+		.qodef-newsletter-title {
+			text-align: inherit;
+		}
+		
+		.qodef-newsletter-form {
+			
+			flex-direction: column;
+			
+			.qodef-button {
+				padding: 6px 19px;
+				width: 177px;
+				margin: 0 auto;
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+.qodef-footer--dark {
+	
+	#qodef-footer-newsletter {
+		background-color: #2d2c2c;
+		
+		&:after {
+			background-color: #424242;
+		}
+		
+		h5 {
+			color: #fff;
+		}
+		
+		.qodef-newsletter-form {
+			
+			input {
+				background-color: #424242;
+				border-color: transparent;
+			}
+		}
+
+		input[type=email]:focus,
+		input[type=number]:focus,
+		input[type=password]:focus,
+		input[type=search]:focus,
+		input[type=tel]:focus,
+		input[type=text]:focus,
+		input[type=url]:focus,
+		textarea:focus {
+			color: #fff;
+		}
+	}
+}

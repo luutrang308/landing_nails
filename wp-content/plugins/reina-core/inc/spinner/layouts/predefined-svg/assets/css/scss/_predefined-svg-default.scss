@@ -1,0 +1,258 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+@keyframes qodef-text-fade{
+	0% {
+		opacity:0;
+	}
+	50%, 80% {
+		opacity:1;
+	}
+	100%{
+		opacity:0;
+	}
+}
+
+@keyframes qodef-path-fade{
+	0%, 1%{
+		opacity:0;
+	}
+	7%, 88%{
+		opacity:1;
+	}
+	100%{
+		opacity:0;
+	}
+}
+
+/*@keyframes qodef-path-draw-1 {
+	0%, 20%{
+		stroke-dashoffset: 100;
+	}
+	80%, 100%{
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes qodef-path-draw-2 {
+	0%, 10%{
+		stroke-dashoffset: 100;
+	}
+	70%, 100%{
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes qodef-path-draw-3 {
+	0%{
+		stroke-dashoffset: 100;
+	}
+	50%, 100%{
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes qodef-path-draw-4 {
+	0%, 10%{
+		stroke-dashoffset: 100;
+	}
+	70%, 100%{
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes qodef-path-draw-5 {
+	0%, 20%{
+		stroke-dashoffset: 100;
+	}
+	80%, 100%{
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes qodef-path-draw-6 {
+	0%, 30%{
+		clip-path: inset(-1px 50%);
+	}
+	60%, 100%{
+		clip-path: inset(-1px 0%);
+	}
+}*/
+
+@keyframes qodef-path-draw-1 {
+	0%{
+		stroke-dashoffset: 100;
+	}
+	25%, 100%{
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes qodef-path-draw-2 {
+	0%, 12%{
+		stroke-dashoffset: 100;
+	}
+	32%, 100%{
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes qodef-path-draw-3 {
+	0%, 24%{
+		stroke-dashoffset: 100;
+	}
+	43%, 100%{
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes qodef-path-draw-4 {
+	0%, 34%{
+		stroke-dashoffset: 100;
+	}
+	55%, 100%{
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes qodef-path-draw-5 {
+	0%, 47%{
+		stroke-dashoffset: 100;
+	}
+	76%, 100%{
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes qodef-path-draw-6 {
+	0%, 61%{
+		stroke-dashoffset: 100;
+	}
+	90%, 100%{
+		stroke-dashoffset: 0;
+	}
+}
+
+
+#qodef-page-spinner {
+	
+	&.qodef-layout--predefined-svg {
+		.qodef-m-spinner {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			color: $heading-color;
+		}
+		
+		.qodef-m-predefined {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			transition: .3s ease-in-out;
+			opacity: 0;
+			@include qodefAbsoluteLayout();
+			
+			&.qodef-spinner-animate {
+				opacity: 1;
+				
+				svg {
+					opacity : 0;
+					animation: qodef-path-fade 3.5s cubic-bezier(0.39, 0.58, 0.57, 1) 0s infinite;
+
+					.qodef-path-1{
+						animation:qodef-path-draw-1 3.5s cubic-bezier(0.51, 0.82, 0.57, 1) 0s infinite;
+					}
+
+					.qodef-path-2 {
+						animation:qodef-path-draw-2 3.5s cubic-bezier(0.51, 0.82, 0.57, 1) 0s infinite;
+					}
+
+					.qodef-path-3 {
+						animation:qodef-path-draw-3 3.5s cubic-bezier(0.51, 0.82, 0.57, 1) 0s infinite;
+					}
+
+					.qodef-path-4 {
+						animation:qodef-path-draw-4 3.5s cubic-bezier(0.51, 0.82, 0.57, 1) 0s infinite;
+					}
+
+					.qodef-path-5 {
+						animation:qodef-path-draw-5 3.5s cubic-bezier(0.51, 0.82, 0.57, 1) 0s infinite;
+					}
+
+					.qodef-path-6 {
+						//animation:qodef-path-draw-6 3.5s cubic-bezier(0.51, 0.82, 0.57, 1) 0s infinite;
+						animation: qodef-path-draw-6 3.5s cubic-bezier(0.27, 0.7, 0.57, 1) 0s infinite;
+					}
+				}
+
+				.qodef-loading-text {
+					 //animation: qodef-text-fade 2.5s cubic-bezier(0.39, 0.58, 0.57, 1) 0s infinite;
+				}
+
+				.qodef-loading-tagline {
+					//opacity: 1;
+					//animation: qodef-text-fade 2.5s cubic-bezier(0.39, 0.58, 0.57, 1) 0s infinite;
+				}
+			}
+			
+			svg {
+				width: 119px;
+				fill: none;
+				stroke: currentColor;
+
+				.qodef-shape {
+					stroke-width: 4;
+				}
+
+				#qodefmask1,
+				#qodefmask2,
+				#qodefmask3,
+				#qodefmask4,
+				#qodefmask5{
+					fill: #fff;
+					stroke: #fff;
+					stroke-width: .3;
+					stroke-miterlimit: 10;
+				}
+
+				.qodef-path-1,
+				.qodef-path-2,
+				.qodef-path-3,
+				.qodef-path-4,
+				.qodef-path-5{
+					stroke-dasharray: 100;
+				}
+
+				.qodef-path-6 {
+					stroke-dasharray: 100;
+				}
+			}
+
+			.qodef-loading-text {
+				display: inline-flex;
+				@include qodefHeadingStyle('h4');
+				color: currentColor;
+				margin-top: 5px;
+				//opacity: 0;
+			}
+
+			.qodef-e-character {
+				opacity: 0;
+				/*//transform: translateY(110%) translateZ(0);*/
+			}
+
+			.qodef-loading-tagline {
+				@include qodefH7Style($main-color);
+				font-size: 12px;
+				text-transform: uppercase;
+				margin-top: 7px;
+				opacity: 0;
+			}
+		}
+	}
+}
+
+
+
+

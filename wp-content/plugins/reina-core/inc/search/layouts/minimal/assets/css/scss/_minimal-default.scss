@@ -1,0 +1,128 @@
+/* ==========================================================================
+# Search minimal header - start
+========================================================================== */
+
+@keyframes minimal_search_fade_out {
+
+	0% {
+		opacity: 1;
+		visibility: visible;
+		z-index: 100;
+	}
+
+	100% {
+		opacity: 0;
+		visibility: hidden;
+		z-index: 0;
+	}
+}
+
+@keyframes minimal_search_fade_in {
+
+	0% {
+		opacity: 0;
+		visibility: hidden;
+		z-index: 100;
+	}
+
+	100% {
+		opacity: 1;
+		visibility: visible;
+		z-index: 100;
+	}
+}
+
+.qodef-search-minimal-form {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 290px;
+	visibility: hidden;
+	opacity: 0;
+	background-color: #fff;
+	z-index: -1;
+	transition: opacity 0.3s ease;
+	padding: $full-width-side-padding;
+
+	@include qodefScreenSize1440 {
+		width: 240px;
+	}
+	
+	.qodef-m-inner {
+		display: flex;
+		height: 100%;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	.qodef-m-form-field {
+		padding: 0 20px 0 0;
+		margin-bottom: 0;
+		font-size: 15px;
+		line-height: 28px;
+		font-weight: 400;
+		color: $heading-color;
+		background-color: transparent;
+		border: 0;
+		border-bottom: 1px solid #e7e6e4;
+		border-radius: 0;
+		outline-offset: 0;
+		
+		&:focus {
+			color: $heading-color;
+		}
+
+		&:invalid {
+			outline: 0;
+			box-shadow: none;
+		}
+		
+		@include qodefPlaceholder {
+			color: inherit;
+		}
+	}
+	
+	.qodef-m-close {
+		position: absolute;
+		right: 38px;
+		flex-shrink: 0;
+		color: $heading-color;
+
+		&:hover {
+			color: $main-color;
+		}
+
+		&.qodef-source--icon-pack {
+			font-size: 17px;
+		}
+	}
+	
+	.qodef-minimal-search--fadeout & {
+		animation: minimal_search_fade_out .3s ease both;
+	}
+	
+	.qodef-minimal-search--fadein & {
+		animation: minimal_search_fade_in .3s ease both;
+	}
+	
+	.qodef-header--sticky-display #qodef-page-header > & {
+		display: none;
+	}
+}
+
+.qodef-header--centered {
+	
+	.qodef-search-minimal-form {
+		padding: 0 40px 0 0;
+		top: unset;
+		bottom: 16px;
+		left: -1px;
+		height: 30px;
+	}
+}
+
+/* ==========================================================================
+# Search minimal header - end
+========================================================================== */

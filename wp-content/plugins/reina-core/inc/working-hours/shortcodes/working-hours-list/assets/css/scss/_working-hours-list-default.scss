@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Working Hours List shortcode styles
+   ========================================================================== */
+
+.qodef-working-hours-list {
+	@include qodefRelativeLayout();
+	
+	.qodef-working-hours-item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 8px;
+		
+		> * {
+			margin: 0;
+			font-size: 18px;
+
+			#qodef-side-area & {
+				font-size: 14px;
+			}
+		}
+		
+		&:last-child {
+			margin-bottom: 0;
+			
+			.qodef-e-day {
+				
+				&:after {
+					content: ': *';
+				}
+			}
+		}
+	}
+	
+	.qodef-e-day {
+		margin-right: 5px;
+		
+		&:after {
+			content: ':';
+		}
+	}
+	
+	.qodef-e-time {
+		
+		&.qodef--closed {
+			color: $main-color;
+		}
+	}
+}
+
+#qodef-page-footer{
+	
+	.qodef-working-hours-list {
+		
+		.qodef-working-hours-item {
+			
+			margin-bottom: 18px;
+			vertical-align: top;
+			margin-top: -8px;
+			
+			> * {
+				font-size: 14px;
+				color: $text-color;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Working Hours List shortcode styles
+   ========================================================================== */

@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Mobile Header styles
+   ========================================================================== */
+.qodef-mobile-header-navigation {
+	
+	ul {
+		
+		li {
+			
+			a {
+				
+				.qodef-menu-item-icon {
+					margin-right: 5px;
+				}
+			}
+			
+			&.qodef--hide-link > a {
+				cursor: default;
+			}
+			
+			&.menu-item-has-children {
+				
+				& > .qodef-menu-arrow {
+					position: absolute;
+					top: -3px;
+					right: -3px;
+					display: block;
+					width: 30px;
+					height: 30px;
+					font-size: 16px;
+					line-height: 28px;
+					cursor: pointer;
+					color: $heading-color;
+					pointer-events: none;
+					
+					&:after {
+						color: inherit;
+						display: block;
+						line-height: inherit;
+						content: '';
+						font-family: "Ionicons";
+						font-style: normal;
+						text-align: center;
+						transition: transform 0.3s ease;
+						transform-origin: center center;
+					}
+				}
+				
+				&.qodef--opened {
+					
+					> .qodef-menu-arrow:after {
+						transform: rotate(90deg);
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-mega-menu-widget-holder {
+		display: none;
+	}
+}

@@ -1,0 +1,29 @@
+.qodef-button {
+    
+    &.qodef-layout--textual {
+        padding: 0 !important;
+        @include qodefH7Style(null);
+        color: $heading-color;
+        background-color: transparent;
+        border: 0;
+        
+        .qodef-m-text {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            padding: 0 25px 0 4px;
+            z-index: 1;
+
+            .qodef-m-strip {
+                @include qodefStrip();
+            }
+        }
+
+        &:hover {
+
+            .qodef-m-strip {
+                @include qodefStripHover();
+            }
+        }
+    }
+}

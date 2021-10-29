@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-post-navigation {
+	@include qodefRelativeLayout();
+	margin-top: 75px;
+	padding-bottom: 11px;
+	border-bottom: 1px solid $border-color;
+	
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	.qodef-m-nav {
+		position: relative;
+		display: flex;
+		align-items: center;
+		@include qodefH7Style($heading-color);
+		
+		> * {
+			display: block;
+			line-height: inherit;
+		}
+
+		&:before {
+			@include qodefMenuItemStrip(20px);
+		}
+		
+		&:hover {
+			color: $heading-color;
+
+			&:before {
+				@include qodefMenuItemStripHover();
+			}
+		}
+		
+		&.qodef--next {
+			flex-direction: row-reverse;
+			margin-left: auto;
+			text-align: right;
+		}
+	}
+}

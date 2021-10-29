@@ -1,0 +1,188 @@
+/* ==========================================================================
+   Opener icon styles
+   ========================================================================== */
+
+.qodef-opener-icon {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+	
+	.qodef-m-icon {
+		position: relative;
+		visibility: visible;
+		
+		&.qodef--close {
+			position: absolute;
+			top: 0;
+			left: 0;
+			visibility: hidden;
+		}
+	}
+	
+	&.qodef-source--icon-pack {
+		font-size: 35px;
+		
+		* {
+			display: inline-block;
+			line-height: inherit;
+			
+			&:before {
+				display: inline-block;
+				line-height: inherit;
+			}
+		}
+	}
+	
+	&.qodef-source--svg-path {
+		
+		span {
+			position: relative;
+			
+			> * {
+				vertical-align: middle;
+			}
+			
+			> *,
+			path {
+				fill: currentColor;
+				stroke: currentColor;
+			}
+
+			&:hover {
+				.qodef-custom-side-area-opener {
+					polygon {
+						animation: 1s qode-menu-opener cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+
+						&:nth-of-type(1) {
+							animation-delay: 0s;
+						}
+
+						&:nth-of-type(2) {
+							animation-delay: .15s;
+						}
+
+						&:nth-of-type(3) {
+							animation-delay: .3s;
+						}
+					}
+				}
+
+				.qodef-custom-menu-opener {
+					line {
+						animation: .8s qode-menu-opener cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+
+						&:nth-of-type(1) {
+							animation-delay: 0s;
+						}
+
+						&:nth-of-type(2) {
+							animation-delay: .15s;
+						}
+
+						&:nth-of-type(3) {
+							animation-delay: .3s;
+						}
+					}
+				}
+
+				.qodef-custom-side-area-close {
+					polygon {
+						&:nth-of-type(1) {
+							animation: .7s qode-menu-close-line-1 cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+						}
+
+						&:nth-of-type(2) {
+							animation: .7s qode-menu-close-line-1 .15s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+						}
+					}
+				}
+
+				.qodef-custom-menu-close {
+					line {
+						&:nth-of-type(1) {
+							animation: .7s qode-menu-close-line-1 cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+						}
+
+						&:nth-of-type(2) {
+							animation: .7s qode-menu-close-line-1 .15s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+						}
+					}
+				}
+			}
+		}
+
+		.qodef-custom-side-area-opener {
+			polygon {
+				transform-origin: 100% 50%;
+			}
+		}
+
+		.qodef-custom-menu-opener {
+			line {
+				transform-origin: 100% 50%;
+			}
+		}
+
+		.qodef-mobile-header-opener.qodef--opened {
+			span {
+				.qodef-custom-menu-opener {
+					path {
+						animation: .6s qode-menu-opener cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+
+						&:nth-of-type(1) {
+							animation-delay: 0s;
+						}
+
+						&:nth-of-type(2) {
+							animation-delay: .15s;
+						}
+
+						&:nth-of-type(3) {
+							animation-delay: .3s;
+						}
+					}
+				}
+
+				.qodef-custom-menu-close {
+					line {
+						&:nth-of-type(1) {
+							animation: .7s qode-menu-close-line-1 cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+						}
+
+						&:nth-of-type(2) {
+							animation: .7s qode-menu-close-line-1 .15s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	&.qodef-source--predefined {
+		
+		.qodef-m-lines {
+			position: relative;
+			display: block;
+			width: 30px;
+			height: 30px;
+		}
+		
+		.qodef-m-line {
+			position: absolute;
+			left: 0;
+			height: 4px;
+			width: 100%;
+			background-color: currentColor;
+			transition: top .3s ease, transform .3s ease;
+			
+			&.qodef--1 {
+				top: 8px;
+			}
+			
+			&.qodef--2 {
+				top: 17px;
+			}
+		}
+	}
+}

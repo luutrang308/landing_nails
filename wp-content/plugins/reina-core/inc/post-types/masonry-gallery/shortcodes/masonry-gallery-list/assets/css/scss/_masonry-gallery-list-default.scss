@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Masonry gallery shortcode styles
+   ========================================================================== */
+
+.qodef-masonry-gallery-list {
+	
+	.qodef-e-inner {
+		@include qodefRelativeLayout();
+	}
+	
+	.qodef-e-media-image {
+		@include qodefRelativeLayout();
+		
+		img {
+			display: block;
+		}
+	}
+	
+	.qodef-e-content {
+		@include qodefAbsoluteLayout();
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.qodef-e-mark {
+		@include qodefH7Style();
+		position: absolute;
+		top: 22px;
+		right: 26px;
+		z-index: 1;
+	}
+	
+	.qodef-e-title {
+		margin: 0;
+	}
+	
+	.qodef-e-text {
+		margin: 17px 0 0;
+	}
+	
+	.qodef-e-button {
+		margin: 37px 0 0;
+		
+		a {
+			position: relative;
+			z-index: 2;
+		}
+	}
+	
+	.qodef-e-link {
+		@include qodefAbsoluteLayout();
+	}
+	
+	&.qodef-items--fixed {
+		
+		.qodef-e-media-image {
+			height: 100%;
+		}
+	}
+	
+	.qodef-testimonials-list{
+		margin-top: 37px;
+
+		@media only screen and (min-width: 1920px) {
+			margin-top: 67px;
+		}
+
+		.swiper-pagination-bullets{
+			display: none;
+		}
+		
+		.qodef-e-author{
+			margin-top: 15px;
+		}
+	}
+}

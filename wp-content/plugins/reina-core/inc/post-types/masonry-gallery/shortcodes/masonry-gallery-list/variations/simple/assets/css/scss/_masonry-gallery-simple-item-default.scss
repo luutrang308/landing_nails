@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Masonry gallery shortcode variation styles
+   ========================================================================== */
+
+.qodef-masonry-gallery-list {
+	
+	.qodef-layout--simple {
+		
+		.qodef-e-media-image {
+			overflow: hidden;
+
+			img {
+				@include qodefImageMove();
+			}
+		}
+
+		&:hover {
+			.qodef-e-media-image {
+				img {
+					@include qodefImageMoveHover();
+				}
+			}
+		}
+	}
+}

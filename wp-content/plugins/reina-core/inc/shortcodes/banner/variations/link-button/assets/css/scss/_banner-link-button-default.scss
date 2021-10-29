@@ -1,0 +1,30 @@
+.qodef-banner {
+	
+	&.qodef-layout--link-button {
+		
+		.qodef-m-content {
+			align-items: flex-end;
+		}
+		
+		.qodef-m-content-inner {
+			width: 100%;
+			padding: 55px 30px 54px;
+			background-color: $background-color;
+
+		}
+
+		.qodef-m-image {
+			img {
+				@include qodefImageMove();
+			}
+		}
+
+		&:hover {
+			.qodef-m-image {
+				img {
+					@include qodefImageMoveHover();
+				}
+			}
+		}
+	}
+}

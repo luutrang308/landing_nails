@@ -1,0 +1,42 @@
+1.4
+- Added WordPress 5.8.1 compatibility
+- Added WooCommerce 5.6.0 compatibility
+- Updated Qode Framework plugin to 1.1.6
+- Updated Reina Core plugin to 1.1.1
+- Updated Timetable plugin to 6.8
+- Updated Revolution Slider plugin to 6.5.8
+- Fixed Divided Header menu layout with no widgets
+- Fixed creation of the Custom Sidebars in new Widgets layout
+- Fixed Dropdown Cart widget error
+
+1.3
+- Added WordPress 5.7.2 compatibility
+- Added WooCommerce 5.3.0 compatibility
+- Added Choose Slide Animation option for Slider shortcodes
+- Updated Reina Core plugin to 1.1
+- Fixed import functionality PHP 8
+- Fixed theme registration compatibility PHP 8
+- Fixed elementor grid size
+- Fixed custom class excluding for shortcodes
+- Improved theme registration to block Shortcodes and CPT loading if the theme is not registered
+- Improved PHP8 compatibility
+
+1.2
+- Added compatibility with Qi Addons for Elementor plugin
+- Added WordPress 5.7.1 compatibility
+- Added WooCommerce 5.2.2 compatibility
+- Updated Reina Core plugin to 1.0.2
+- Updated Slider Revolution plugin to 6.4.11
+- Updated Booked plugin to 2.3.5
+
+1.1.1
+- Updated Timetable plugin to version 6.6
+- Updated Revolution Slider plugin to version 6.4.6
+- Updated Reina Core plugin to 1.0.1
+- Fixed Product Banner when WooCommerce is inactive
+
+1.1
+- Added Booked plugin compatibility
+
+1.0.1
+- Fixed minor bugs

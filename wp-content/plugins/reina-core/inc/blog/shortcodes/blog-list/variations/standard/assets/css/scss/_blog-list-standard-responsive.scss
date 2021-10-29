@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Blog List styles
+   ========================================================================== */
+
+.qodef-blog {
+	
+	@include qodefScreenSize768 {
+		
+		&.qodef-item-layout--standard:not(.qodef-col-num--1) {
+			
+			.qodef-blog-item {
+
+				&:not(:last-child) {
+					margin: 0 0 80px 0 !important;
+				}
+			}
+		}
+	}
+}

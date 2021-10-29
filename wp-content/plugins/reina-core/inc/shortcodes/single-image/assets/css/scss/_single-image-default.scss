@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Single Images shortcode styles
+   ========================================================================== */
+
+.qodef-single-image {
+	@include qodefRelativeLayout();
+
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+	}
+
+	a {
+		@include qodefAbsoluteLayout();
+		z-index: 1;
+	}
+
+	img {
+		display: block;
+		z-index: 100;
+		position: relative;
+	}
+
+	.qodef-m-svg {
+		position: absolute;
+		right: 0;
+		bottom: 20px;
+		z-index: 0;
+		@include qodefSvgStyle();
+	}
+
+	.qodef-m-background {
+		@include qodefAbsoluteLayout();
+	}
+}
+

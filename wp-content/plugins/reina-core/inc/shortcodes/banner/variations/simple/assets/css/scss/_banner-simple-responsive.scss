@@ -1,0 +1,33 @@
+.qodef-banner {
+	
+	&.qodef-layout--simple {
+		
+		@include qodefScreenSize1440 {
+			
+			.qodef-m-content-inner {
+				
+				padding: 67px 0 25px;
+				
+				.qodef-m-title,
+				p.qodef-m-text,
+				.qodef-m-button{
+					padding: 0 10%;
+				}
+			}
+		}
+		
+		@include qodefScreenSize680 {
+			
+			.qodef-m-content-inner {
+				
+				padding: 39px 0;
+				
+				.qodef-m-title,
+				p.qodef-m-text,
+				.qodef-m-button{
+					padding: 0 10%;
+				}
+			}
+		}
+	}
+}

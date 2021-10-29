@@ -1,0 +1,127 @@
+/* ==========================================================================
+   Image Section Info shortcode styles
+   ========================================================================== */
+
+.qodef-image-section-info {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-inner {
+		display: flex;
+		align-items: stretch;
+		
+		> * {
+			position: relative;
+		}
+	}
+	
+	.qodef-m-image {
+		
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.qodef-m-title-image {
+		display: flex;
+
+		img {
+			display: block;
+		}
+
+		&.qodef--right {
+			justify-content: flex-end;
+		}
+	}
+	
+	.qodef-m-content {
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
+
+		> .qodef-m-text {
+			color: $text-color;
+		}
+		
+		ul{
+			color: $footer-text-color;
+		}
+	}
+	
+	.qodef-m-heading {
+		position: relative;
+	}
+	
+	.qodef-m-title {
+		position: relative;
+		margin: 0;
+		z-index: 1;
+	}
+	
+	.qodef-m-subtitle {
+		position: absolute;
+		bottom: calc(100% - 10px);
+		left: -18px;
+		margin: 0;
+		transform: rotate(-90deg) translateX(-100%);
+		transform-origin: 0 100%;
+	}
+	
+	.qodef-m-text {
+		position: relative;
+		margin: 11px 0 0;
+		z-index: 1;
+	}
+	
+	.qodef-m-button {
+		position: relative;
+		margin: 45px 0 0;
+		z-index: 1;
+	}
+
+	@media only screen and (min-width: $screen-size-1025) {
+
+		.qodef-working-hours-list {
+			width: 360px;
+		}
+	}
+	
+	&.qodef--left {
+		
+		.qodef-m-inner {
+			flex-direction: row-reverse;
+		}
+	}
+
+	&.qodef-layout--standard.qodef--has-appear {
+
+		.qodef-m-image {
+
+			img {
+				clip-path: inset(0 100% 0 0);
+				transition: 1s cubic-bezier(.45,.05,.15,.93) .1s;
+			}
+
+			&:before {
+				transform: scaleY(.5);
+				transition: transform 1s ease-out;
+			}
+		}
+
+		&.qodef--appeared {
+
+			.qodef-m-image {
+
+				img {
+					clip-path: inset(0 0 0 0);
+				}
+
+				&:before {
+					transform: scaleY(1);
+				}
+			}
+		}
+	}
+}

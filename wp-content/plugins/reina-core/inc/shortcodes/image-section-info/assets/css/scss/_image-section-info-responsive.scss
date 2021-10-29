@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Image Section Info shortcode responsive styles
+   ========================================================================== */
+
+.qodef-image-section-info {
+	
+	@include qodefScreenSize1024 {
+		
+		.qodef-m-inner {
+			flex-direction: column;
+			margin: 0;
+			
+			> * {
+				width: 100%;
+			}
+		}
+		
+		.qodef-m-image {
+			
+			img {
+				height: auto;
+			}
+		}
+		
+		.qodef-m-title {
+			margin: 0;
+		}
+
+		.qodef-m-title-image {
+
+			&.qodef--right {
+				justify-content: flex-start;
+			}
+		}
+		
+		.qodef-m-content {
+			padding: 40px;
+		}
+		
+		.qodef-m-subtitle {
+			left: -9px;
+			padding: 0;
+		}
+		
+		&.qodef--right,
+		&.qodef--left {
+			
+			.qodef-m-inner {
+				flex-direction: column;
+			}
+		}
+	}
+	
+	@include qodefScreenSize680 {
+		
+		.qodef-m-title-image {
+			
+			img {
+				margin-top: 15px;
+			}
+		}
+		
+		.qodef-m-subtitle {
+			bottom: unset;
+			left: 0;
+			margin-top: 5px;
+			transform: none;
+		}
+		
+		.qodef-m-title {
+			margin-top: 25px;
+		}
+
+		.qodef-m-svg {
+			display: none;
+		}
+	}
+}

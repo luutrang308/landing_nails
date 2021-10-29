@@ -1,0 +1,710 @@
+/* ==========================================================================
+   Booked calendar shortcode styles - begin
+   ========================================================================== */
+
+.qodef-booked-calendar {
+	background-color: $additional-background-color;
+
+	&.qodef--has-shadow {
+		box-shadow: 0px 2px 21px 0px rgba(0, 0, 0, 0.54);
+	}
+	
+	.booked-calendar-wrap {
+		margin: 0;
+		padding: 18px 40px 40px;
+
+		@media only screen and (min-width: 1025px) {
+
+			[id*=rev_slider] & {
+				height: inherit !important;
+			}
+		}
+
+		@include qodefScreenSize1024 {
+			overflow-y: scroll;
+
+			[id*=rev_slider] & {
+				height: auto !important;
+				max-height: 450px;
+			}
+		}
+
+		@include qodefScreenSize680 {
+			padding: 18px 24px 20px;
+		}
+		
+		table.booked-calendar {
+			
+			th,
+			thead th,
+			thead tr {
+				background-color: $additional-background-color !important;
+				border-color: $additional-background-color;
+				
+				.page-right,
+				.page-left {
+					color: $heading-color !important;
+					transform: translateX(0);
+					transition: all .25s ease-out;
+				}
+				
+				.calendarSavingState {
+					color: $text-color;
+				}
+				
+				.page-right {
+					right: -8px !important;
+
+					&:hover {
+						transform: translateX(2px);
+					}
+				}
+				
+				.page-left {
+					left: -8px !important;
+
+					&:hover {
+						transform: translateX(-2px);
+					}
+				}
+				
+				.booked-icon-arrow-right,
+				.booked-icon-arrow-left {
+					font-family: "linea-arrows-10";
+					color: $heading-color;
+					font-size: 25px;
+				}
+				
+				.booked-icon-arrow-right:before {
+					content: "\e04b";
+				}
+				
+				.booked-icon-arrow-left:before {
+					content: "\e03f";
+				}
+			}
+			
+			thead {
+				background-color: $main-color !important;
+				
+				th {
+					color: $heading-color;
+					font-family: $text-font;
+					font-size: 14px !important;
+					line-height: 24px !important;
+					letter-spacing: normal !important;
+					padding: 20px 0 !important;
+					border: none !important;
+
+					@include qodefScreenSize680 {
+						font-size: 12px !important;
+					}
+				}
+			}
+			
+			.monthName {
+				font-family: $heading-font;
+				font-size: 35px !important;
+				font-style: normal;
+				line-height: 1.3em !important;
+				font-weight: 500;
+				text-transform: capitalize;
+				letter-spacing: 0 !important;
+				color: $heading-color !important;
+
+				@include qodefScreenSize680 {
+					font-size: 30px !important;
+				}
+				
+				.backToMonth {
+					display: none;
+				}
+			}
+			
+			.page-left,
+			.page-right {
+				margin-top: -0.60rem !important;
+			}
+			
+			tr {
+				background-color: #fff;
+				border: 1px solid $border-color;
+				
+				&.entryBlock {
+					background-color: transparent;
+					
+					td {
+						padding: 0 !important;
+						
+						h2 {
+							margin: 0 !important;
+						}
+					}
+
+					&.booked-loading {
+						background-color: $additional-color;
+					}
+				}
+				
+				&.days {
+					background-color: $background-color !important;
+					border-bottom-color: $border-color;
+
+					.qodef-browser--firefox & {
+						border-bottom: 2px solid $border-color;
+					}
+					
+					th {
+						background: transparent !important;
+						border: none !important;
+						color: $heading-color !important;
+						padding: 20px 0 !important;
+					}
+				}
+				
+				&.week {
+					
+					td {
+						
+						&.active {
+							
+							.date {
+								background-color: $additional-background-color !important;
+							}
+						}
+					}
+				}
+			}
+			
+			td {
+				background-color: $background-color;
+				font-size: 17px;
+				color: #504e45;
+				border-right: 1px solid $border-color !important;
+				
+				&:first-child {
+					border-left: none !important;
+				}
+				
+				&:last-child {
+					border-right: none !important;
+				}
+				
+				.date {
+					transition: all 0.3s ease-in-out;
+					background-color: transparent !important;
+					color: $heading-color;
+					
+					.number {
+						border-radius: 0;
+					}
+				}
+				
+				// active
+				&.active,
+				&.active:hover,
+				&.today:not(.prev-date):hover,
+				&.today.active,
+				&.today.active:hover {
+					background-color: $additional-color !important;
+					
+					.date {
+						background-color: $additional-color !important;
+
+						.number {
+							background-color: $additional-color !important;
+							color: #fff !important;
+							transform: scale(1) !important;
+						}
+					}
+				}
+				
+				// prev and next month
+				&.prev-month .date,
+				&.next-month .date,
+				&.next-month.prev-date .date {
+					
+					span.number {
+						color: #504e45 !important;
+						opacity: 0.3;
+					}
+				}
+				
+				&.prev-month:hover .date,
+				&.next-month:hover .date {
+					
+					.number {
+						color: #fff !important;
+						opacity: 1;
+					}
+				}
+
+				&.prev-month.prev-date:hover .date {
+					
+					.number {
+						color: $heading-color !important;
+						opacity: 0.3;
+					}
+				}
+				
+				// today
+				&.today.prev-date .date {
+					border: 1px solid $main-color !important;
+					width: 100%;
+					height: 100%;
+
+					.qodef-browser--firefox & {
+						height: calc(100% + 1px);
+					}
+					
+					span {
+						color: #504e45 !important;
+					}
+				}
+				
+				&.today {
+					
+					.date {
+						border: 1px solid $text-color !important;
+						transition: all 0.3s ease-in-out;
+						
+						span {
+							color: #504e45 !important;
+							border: none !important;
+						}
+					}
+					
+					&:not(.prev-date) {
+						
+						&:hover {
+							
+							.date {
+								background-color: $text-color !important;
+							}
+						}
+					}
+				}
+				
+				// illegible date
+				&.prev-date .date,
+				&.prev-date .date span,
+				&.prev-date:hover .date,
+				&.prev-date:hover .date span {
+					background: transparent !important;
+					color: #504e45 !important;
+					cursor: context-menu;
+					
+					.qodef-browser--edge &,
+					.qodef-browser--ms-explorer & {
+						background-color: #fafafa !important;
+					}
+				}
+				
+				&:hover {
+					
+					.date {
+						background-color: $additional-color !important;
+						transition: none;
+						
+						span {
+							background-color: $additional-color;
+							color: #fff;
+							transition: none;
+						}
+					}
+				}
+
+				&.prev-date:not(.today) {
+
+					.date {
+
+						.number {
+							color: $border-color !important;
+						}
+					}
+				}
+			}
+			
+			tbody {
+				background-color: $main-color !important;
+				
+				tr {
+					border: 1px solid $border-color !important;
+				}
+			}
+			
+			.booked-appt-list {
+				
+				.timeslot {
+					
+					&:hover {
+						background: transparent;
+					}
+				}
+			}
+			
+			.booked-appt-list.shown {
+				padding: 0 33px 1px;
+				border-radius: 0;
+				
+				h2 {
+					display: none;
+				}
+				
+				.timeslot {
+					padding: 25px 0 0 0 !important;
+					border-bottom: 1px solid $border-color !important;
+					border-top: none !important;
+					
+					&:last-child {
+						border: none !important;
+					}
+					
+					@include qodefScreenSize680() {
+						padding: 0 0 3px !important;
+						border: 0 !important;
+					}
+					
+					.timeslot-time {
+						width: 57%;
+						padding: 0;
+						
+						.timeslot-title {
+							@include qodefHeadingStyle(h4);
+							color: $heading-color !important;
+							font-style: normal;
+							margin: 0 0 1px !important;
+							letter-spacing: 0 !important;
+						}
+						
+						.timeslot-range {
+							font-size: 12px !important;
+							color: $text-color;
+							font-family: $text-font;
+							font-weight: 300;
+							
+							.booked-icon {
+								color: $text-color !important;
+							}
+						}
+						
+						.spots-available {
+							line-height: 2.2;
+							font-size: 12px;
+							letter-spacing: 0.25em;
+						}
+					}
+					
+					.timeslot-people {
+						padding: 6px 0 0 0;
+						
+						.button {
+							background-color: $additional-color !important;
+							margin-top: 0 !important;
+							border-color: transparent !important;
+							padding: 7px 18px;
+							transition: all 0.3s ease-in-out !important;
+							border-radius: 5px !important;
+							
+							&:hover {
+								background-color: $heading-color !important;
+								border-color: inherit !important;
+							}
+							
+							&:focus {
+								outline: none !important;
+							}
+							
+							.button-text {
+								font-family: $text-font !important;
+								text-transform: uppercase !important;
+								font-size: 10px;
+								color: $background-color !important;
+								letter-spacing: 0.26em;
+							}
+						}
+					}
+					
+					&.timeslot-unavailable {
+						
+						.timeslot-people {
+							
+							.button {
+								background-color: #eee !important;
+								color: #aaa !important;
+								
+								&:hover {
+									background-color: #eee !important;
+									color: #aaa !important;
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			.booked-loading {
+				
+				.booked-spinner {
+					
+					div > * {
+						background-color: $text-color !important;
+					}
+				}
+			}
+		}
+		
+		&.small {
+		
+			table.booked-calendar {
+				max-height: 450px;
+
+				thead {
+					
+					tr.days {
+
+						th {
+							padding: 19px 0 9px !important;
+						}
+					}
+					
+					th {
+						background-color: $additional-background-color !important;
+					}
+				}
+				
+				tbody {
+					
+					tr.week {
+						
+						td {
+							font-size: 18px;
+							
+							&.active,
+							&.active:hover,
+							&.today:not(.prev-date):hover,
+							&.today.active,
+							&.today.active:hover {
+								background-color: $additional-color !important;
+								
+								.date {
+									background-color: $additional-color !important;
+									
+									span {
+										background-color: $additional-color !important;
+									}
+									
+									.number {
+										background-color: $additional-background-color !important;
+										color: $heading-color !important;
+										transform: scale(1) !important;
+									}
+								}
+							}
+
+							[id*="rev_slider"] & {
+								height: auto !important;
+								line-height: 45px;
+
+								* {
+									line-height: inherit !important;
+								}
+							}
+						}
+					}
+				}
+				
+				tr {
+					
+					&.week {
+						
+						td {
+						
+							&.active {
+								
+								.date {
+									background-color: $additional-background-color !important;
+								}
+							}
+						}
+					}
+				}
+
+				td {
+
+					.date {
+
+						&.tooltipster {
+							border: 1px solid transparent;
+
+							&:hover {
+								border-color: $additional-color;
+							}
+						}
+					}
+				}
+
+				.booked-appt-list.shown {
+					
+					.timeslot {
+						border: 0 !important;
+						padding: 10px 0 0 0 !important;
+						margin: 0 !important;
+						
+						&:last-child {
+							margin: 0 0 10px !important;
+						}
+						
+						.timeslot-time {
+							
+							.spots-available {
+								line-height: 2.2;
+							}
+						}
+						
+						.timeslot-people {
+							padding: 1px 0 0;
+							
+							.button {
+								padding: 9px 18px 9px;
+							}
+							
+							.timeslot-mobile-title {
+								font-family: $heading-font;
+								font-size: 22px;
+							}
+							
+							.button-timeslot {
+								font-size: 12px !important;
+								font-family: $text-font;
+								font-weight: 400;
+								color: #fff;
+							}
+							
+							.spots-available {
+								font-size: 12px;
+								letter-spacing: 0.25em;
+								padding:8px 0 3px;
+								font-family: $text-font;
+								color: #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+body {
+	//Button for Request an Appointment
+	.booked-modal {
+		
+		.booked-form.booked-scrollable {
+			background-color: $background-color;
+			margin-top: 22px;
+			
+			#newAppointmentForm {
+				
+				.bookings {
+					
+					.booked-appointment-details {
+						
+						.appointment-title {
+							@include qodefHeadingStyle(h5);
+							padding-bottom: 4px;
+						}
+					}
+				}
+			}
+			
+		}
+		
+		.bm-window {
+			padding-top: 60px;
+			
+			.booked-title-bar {
+				background-color: $additional-background-color;
+				
+				small {
+					@include qodefHeadingStyle(h5);
+					text-align: center;
+					text-transform: none;
+					color: #415962;
+					padding: 13px 25px;
+				}
+			}
+			
+			.cf-block {
+				
+				.field-label {
+					@include qodefHeadingStyle(h5);
+					margin-top: -12px;
+				}
+				
+				input.textfield {
+					position: relative;
+					display: inline-block;
+					width: 100%;
+					vertical-align: top;
+					margin: 0 0 10px;
+					padding: 17px 24px;
+					font-family: inherit;
+					font-size: 17px;
+					line-height: 24px;
+					font-weight: 300;
+					color: $main-color;
+					background-color: #f6f3ee;
+					border: 1px solid transparent;
+					border-radius: 5px;
+					outline: 0;
+					cursor: pointer;
+				}
+				
+				.booked-forgot-password {
+					text-decoration: underline;
+					color: #999999;
+
+					&:hover {
+						color: $heading-color;
+					}
+				}
+			}
+			
+			input.button.button-primary {
+				@include qodefButtonDefaultStyle();
+				@include qodefButtonSize();
+				@include qodefButtonFilledColor(!important);
+				margin-right: 12px;
+
+				@media only screen and (max-width: 360px) {
+					margin-bottom: 20px;
+				}
+				
+				&:hover {
+					@include qodefButtonFilledHoverColor(!important);
+					background-color: $heading-color !important;
+				}
+			}
+			
+			input#submit-request-appointment {
+				margin-bottom: 12px;
+			}
+			
+			button.cancel.button,
+			.booked-forgot-goback.button {
+				@include qodefButtonDefaultStyle();
+				@include qodefButtonSize();
+				border-color: transparent;
+				background-color: #f8f8f8 !important;
+				color: $heading-color !important;
+				cursor: pointer;
+				
+				&:hover {
+					color: #ffffff !important;
+					background-color: $heading-color !important;
+				}
+			}
+		}
+	}
+}

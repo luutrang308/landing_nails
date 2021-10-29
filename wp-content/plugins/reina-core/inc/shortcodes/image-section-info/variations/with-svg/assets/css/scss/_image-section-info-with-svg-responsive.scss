@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Image Section Info shortcode responsive styles
+   ========================================================================== */
+
+.qodef-image-section-info {
+	
+	&.qodef-layout--with-svg {
+		
+		@include qodefScreenSize1024 {
+			
+			.qodef-m-content {
+				width: 100%;
+				padding: 0 50px;
+				margin-top: 26px;
+			}
+			
+			.qodef-m-inner {
+				
+				&:before {
+					width: 100%;
+					height: calc(100% + 50px);
+					top: 0;
+				}
+			}
+			
+			.qodef-m-image {
+				width: 100%;
+			}
+		}
+
+		@include qodefScreenSize680 {
+
+			.qodef-m-content {
+				padding: 0 7% 15px;
+			}
+		}
+	}
+}

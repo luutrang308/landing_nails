@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Header layout styles
+   ========================================================================== */
+
+$left-right-spacing: 12px; // Same size needs to be as in reina-core/inc/header/assets/css/scss/_common-default.scss
+
+.qodef-header--centered {
+	
+	#qodef-page-header {
+		height: 150px;
+	}
+	
+	#qodef-page-header-inner {
+		flex-direction: column;
+		justify-content: center;
+
+		&.qodef-content-grid {
+
+			> div {
+				width: 100%;
+
+				.qodef-header-navigation {
+
+					> ul {
+						justify-content: center;
+					}
+				}
+
+				.qodef--one {
+					margin-right: 0;
+					margin-left: auto;
+				}
+
+				.qodef--two {
+					margin-right: auto;
+				}
+			}
+		}
+		
+		> div {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			height: 100%;
+			
+			.qodef-widget-holder {
+				margin-left: 0;
+			}
+			
+			.qodef-header-navigation {
+				margin: 0 $left-right-spacing * 2;
+			}
+		}
+	}
+}

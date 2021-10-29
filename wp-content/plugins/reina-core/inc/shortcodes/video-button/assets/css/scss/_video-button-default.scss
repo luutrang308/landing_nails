@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Video Button shortcode start styles
+   ========================================================================== */
+
+.qodef-video-button {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+
+	.qodef-m-play {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $heading-color;
+		line-height: 1;
+
+		svg {
+			fill: transparent;
+			stroke-width: .9px;
+			stroke: currentColor;
+			overflow: visible;
+
+			path {
+				fill: currentColor;
+			}
+
+			circle{
+				transition: transform .35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				transform-origin: center;
+				will-change: transform;
+				transform: scale(1);
+			}
+		}
+
+		&:hover {
+			svg {
+				circle{
+					transform: scale(1.15);
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Video Button shortcode end styles
+   ========================================================================== */

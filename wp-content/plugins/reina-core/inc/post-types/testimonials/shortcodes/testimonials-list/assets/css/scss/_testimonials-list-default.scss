@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Testimonials list shortcode styles
+   ========================================================================== */
+
+.qodef-testimonials-list {
+	
+	.qodef-e-inner {
+		padding-bottom: 40px;
+	}
+	
+	.qodef-e-media-image {
+		line-height: 0;
+		margin-bottom: 25px;
+	}
+	
+	.qodef-m-icon {
+		color: rgba($heading-color, .29);
+		margin-bottom: 16px;
+	}
+	
+	svg {
+		position: relative;
+		display: block;
+		width: 174px;
+		margin: 0 auto;
+		fill: none;
+		stroke: currentColor;
+		stroke-miterlimit: 10;
+	}
+	
+	.qodef-e-title {
+		margin: 0 0 25px;
+	}
+	
+	.qodef-e-text {
+		display: block;
+		margin: 0 0 10px;
+		@include qodefHeadingStyle(h5);
+		line-height: 1.44em;
+	}
+	
+	.qodef-e-author {
+		@include qodefH7Style($main-color, 12px);
+	}
+	
+	.swiper-slide {
+		text-align: center;
+	}
+	
+	.swiper-pagination-bullets {
+		bottom: 0 !important;
+		
+		//.swiper-pagination-bullet {
+        //
+		//	&:before {
+		//		background-color: $main-color;
+		//	}
+		//}
+	}
+
+	//&.qodef-swiper-container.qodef-col-num--1 {
+	//	.swiper-slide {
+	//		opacity: 0;
+	//		transition: $opacity-transition;
+    //
+	//		&.swiper-slide-active,
+	//		&.swiper-slide-duplicate-active {
+	//			opacity: 1;
+	//		}
+	//	}
+	//}
+	
+	&.qodef-skin--light {
+		.qodef-e-title,
+		.qodef-e-text {
+			color: #fff;
+		}
+
+		.qodef-e-author {
+			color: #bcbcbc;
+		}
+	}
+}

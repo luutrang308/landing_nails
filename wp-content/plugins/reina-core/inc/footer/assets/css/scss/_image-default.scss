@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Footer Image styles - start
+   ========================================================================== */
+
+#qodef-footer-image {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 99;
+	stroke: $heading-color;
+	fill: none;
+	pointer-events: none;
+
+	@include qodefScreenSize680 {
+		display: none;
+	}
+	
+	svg {
+		display: block;
+		stroke: inherit;
+		fill: inherit;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-miterlimit: 10;
+	}
+}

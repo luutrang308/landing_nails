@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Global styles
+   ========================================================================== */
+
+.reina-core-page-inline-style {
+	position: absolute !important;
+	width: 0;
+	height: 0;
+	line-height: 1;
+	display: none;
+}
+
+section {
+
+	&.qodef-background-svg-section {
+		overflow: hidden;
+	}
+
+	.qodef-row-background-image {
+		position: absolute;
+		display: inline-block;
+		top: 0;
+		left: 0;
+		z-index: -1;
+
+		img {
+			display: block;
+		}
+	}
+
+	.qodef-row-background-svg {
+		position: absolute;
+		display: inline-block;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		@include qodefSvgStyle();
+	}
+}
+
+.qodef-parallax-image .elementor-image {
+	transform: translateY(-120px);
+}
+
+.qodef-draw-svg-custom-delay-1,
+.qodef-draw-svg-custom-delay-2 {
+	svg path {
+		stroke-dashoffset: 1900;
+		stroke-dasharray: 1900;
+		animation-duration: 2000ms!important;
+	}
+}
+

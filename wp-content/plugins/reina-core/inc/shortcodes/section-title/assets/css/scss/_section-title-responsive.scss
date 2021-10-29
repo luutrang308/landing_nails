@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Section Title shortcode responsive styles
+   ========================================================================== */
+
+.qodef-section-title {
+	
+	@include qodefScreenSize1024 {
+		
+		&.qodef-title-break--disabled {
+			
+			.qodef-m-title {
+				
+				br {
+					display: none;
+				}
+			}
+		}
+	}
+
+	@include qodefScreenSize680 {
+
+		&.qodef-title-break--disabled {
+
+			.qodef-m-title {
+
+				br {
+					display: none;
+				}
+			}
+		}
+	}
+
+	@include qodefScreenSize480 {
+
+		.qodef-m-subtitle {
+			position: relative;
+			bottom: 0;
+			left: 0;
+			transform: none;
+		}
+	}
+}

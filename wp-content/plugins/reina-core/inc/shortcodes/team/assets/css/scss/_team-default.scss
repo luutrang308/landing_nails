@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Image With Text shortcode styles
+   ========================================================================== */
+
+.qodef-team {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+		
+		a, img {
+			display: block;
+		}
+	}
+	
+	.qodef-m-svg {
+		@include qodefRelativeLayout();
+		
+		a, svg {
+			display: block;
+		}
+	}
+	
+	.qodef-m-content {
+		@include qodefRelativeLayout();
+	}
+	
+	.qodef-m-title {
+		margin: 22px 0 0;
+	}
+	
+	.qodef-m-text {
+		margin: 11px 0 0;
+	}
+	
+	.qodef-m-icons {
+		margin: 15px 0 0;
+		
+		a{
+			margin-right: 15px;
+			font-size: 16px;
+			
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+	
+	&.qodef-alignment--center {
+		text-align: center;
+		
+		.qodef-m-image,
+		.qodef-m-svg {
+			
+			img,
+			svg {
+				margin: 0 auto;
+			}
+		}
+	}
+	
+	&.qodef-alignment--left {
+		text-align: left;
+	}
+	
+	&.qodef-alignment--right {
+		text-align: right;
+		
+		.qodef-m-image,
+		.qodef-m-svg {
+			
+			img,
+			svg {
+				margin-left: auto;
+			}
+		}
+	}
+}

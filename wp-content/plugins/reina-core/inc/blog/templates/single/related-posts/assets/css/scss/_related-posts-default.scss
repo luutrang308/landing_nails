@@ -1,0 +1,14 @@
+/* ==========================================================================
+   Related Posts styles
+   ========================================================================== */
+
+#qodef-related-posts {
+	@include qodefRelativeLayout();
+	margin-top: 80px;
+	padding-top: 65px;
+	border-top: 1px solid $border-color;
+	
+	.qodef-related-posts-title {
+		margin: 0 0 22px;
+	}
+}

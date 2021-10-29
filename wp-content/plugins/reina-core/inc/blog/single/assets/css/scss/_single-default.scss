@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Blog Single with specific layout styles
+   ========================================================================== */
+
+body[class*="qodef-blog"] {
+
+    #qodef-page-inner {
+        padding: 36px 0 120px 0;
+    }
+
+    #qodef-media {
+        background-size: cover;
+
+        .qodef-e {
+
+            &-media-video {
+                height: 100%;
+
+                video {
+                    height: 100%;
+                    object-fit: cover;
+                    width: 100%;
+                }
+            }
+
+            &-content {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: center;
+
+                @include qodefGridNarrow($narrow--default);
+
+                @each $key, $values in $content-grid-width-responsive-map {
+
+                    @media only screen and (max-width: map-deep-get($content-grid-width-responsive-map, $key, 'responsive-break')) {
+                        max-width: map-deep-get($content-grid-width-responsive-map, $key, 'content-grid-width') !important;
+                    }
+                }
+            }
+
+            &-info {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                margin-bottom: 8px;
+
+                .qodef-e-info-item {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: top;
+                    padding: 0 19px 0 0;
+                    color: $main-color;
+                    @include qodefH7Style(null, 12px);
+
+                    a {
+                        color: inherit;
+
+                        &:hover {
+                            color: $heading-color;
+                        }
+                    }
+
+                    &:after {
+                        content: '|';
+                        position: absolute;
+                        top: 0;
+                        right: 7px;
+                    }
+
+                    &:last-child {
+                        padding-right: 0;
+
+                        &:after {
+                            content: '';
+                        }
+                    }
+                }
+            }
+
+            &-title {
+                margin: 0;
+                text-align: center;
+            }
+        }
+
+        &.qodef-skin--dark {
+
+            .qodef-e {
+
+                &-tagline {
+                    color: $main-color !important;
+                }
+
+                &-title {
+                    color: $heading-color !important;
+                }
+            }
+        }
+    }
+}

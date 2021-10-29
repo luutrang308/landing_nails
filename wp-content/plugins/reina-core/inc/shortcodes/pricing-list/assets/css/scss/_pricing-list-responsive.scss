@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Pricing List shortcode responsive styles
+   ========================================================================== */
+
+.qodef-pricing-list {
+	
+	@include qodefScreenSize680 {
+		
+		.qodef-m-item {
+			flex-wrap: wrap;
+		}
+		
+		.qodef-e-image {
+			margin-bottom: 14px;
+		}
+	}
+}

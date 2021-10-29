@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Social Share shortcode styles
+   ========================================================================== */
+
+.qodef-social-share {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	
+	.qodef-social-title {
+		margin: 0;
+	}
+	
+	ul {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	
+	li {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		line-height: 1;
+		padding: 0;
+		margin: 0;
+		
+		a {
+			font-size: 15px;
+
+			&:hover {
+				color: $heading-color;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Social Share shortcode styles
+   ========================================================================== */

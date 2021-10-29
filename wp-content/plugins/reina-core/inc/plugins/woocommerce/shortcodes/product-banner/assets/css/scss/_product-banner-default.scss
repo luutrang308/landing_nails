@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Banner shortcode styles
+   ========================================================================== */
+
+.qodef-woo-product-banner {
+	@include qodefRelativeLayout();
+	//overflow: hidden;
+	
+	.qodef-woo-product-image {
+		@include qodefRelativeLayout();
+		width: auto;
+		overflow: hidden;
+		
+		//img {
+		//	display: block;
+		//	width: 100%;
+		//}
+	}
+	
+	.qodef-woo-product-link {
+		@include qodefAbsoluteLayout();
+		display: block;
+		z-index: 1;
+	}
+	
+	.qodef-woo-product-content {
+		@include qodefAbsoluteLayout();
+		display: flex;
+	}
+	
+	.qodef-woo-product-tagline {
+		position: relative;
+		display: block;
+		margin: 0 0 3px;
+		font-family: $heading-font;
+		font-size: 80px;
+		line-height: 1.2em;
+		letter-spacing: -.05em;
+		color: #d1ab7d;
+	}
+	
+	.qodef-woo-product-title {
+		margin: 0;
+	}
+
+	.qodef-woo-product-image {
+		img {
+			@include qodefImageMove();
+			transform-origin: bottom;
+		}
+	}
+
+	&:hover {
+		.qodef-woo-product-image {
+			img {
+				@include qodefImageMoveHover();
+			}
+		}
+	}
+}

@@ -1,0 +1,289 @@
+@import '../../../../../../../../themes/reina/assets/css/scss/variables';
+@import '../../../../../../../../themes/reina/assets/css/scss/_grid-variables';
+@import '../../../../../../../../themes/reina/assets/css/scss/mixins';
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+section.qodef-elementor-content-grid {
+    
+    > .elementor-container {
+        width: $content-grid-width-1100;
+        margin: 0 auto;
+    }
+    
+    &.qodef-extended-grid {
+        
+        &:not(.qodef-extended-grid-reset--1024) {
+            
+            > .elementor-container {
+                width: 100% !important; // important is require in order to override responsive width
+                max-width: 100% !important; // important is require in order to override responsive width
+                margin: 0;
+            }
+        }
+        
+        &.qodef-extended-grid-reset--1024 {
+            
+            @media only screen and (min-width: 1025px) {
+                
+                > .elementor-container {
+                    width: 100% !important; // important is require in order to override responsive width
+                    max-width: 100% !important; // important is require in order to override responsive width
+                    margin: 0;
+                }
+            }
+        }
+    }
+    
+    &.qodef-extended-grid--right {
+        
+        &:not(.qodef-extended-grid-reset--1024) {
+            
+            > .elementor-container {
+                padding-left: calc((100% - #{$content-grid-width-1100}) / 2);
+            }
+        }
+        
+        &.qodef-extended-grid-reset--1024 {
+            
+            @media only screen and (min-width: 1025px) {
+                
+                > .elementor-container {
+                    padding-left: calc((100% - #{$content-grid-width-1100}) / 2);
+                }
+            }
+        }
+    }
+    
+    &.qodef-extended-grid--left {
+        
+        &:not(.qodef-extended-grid-reset--1024) {
+            
+            > .elementor-container {
+                padding-right: calc((100% - #{$content-grid-width-1100}) / 2);
+            }
+        }
+        
+        &.qodef-extended-grid-reset--1024 {
+            
+            @media only screen and (min-width: 1025px) {
+                
+                > .elementor-container {
+                    padding-right: calc((100% - #{$content-grid-width-1100}) / 2);
+                }
+            }
+        }
+    }
+    
+    // Global grid style
+    @each $key, $values in $content-grid-width-map {
+        
+        @media only screen and (min-width: map-deep-get($content-grid-width-map, $key, 'responsive-break')) {
+            
+            .qodef-content-grid-#{$key} & {
+                
+                > .elementor-container {
+                    width: map-deep-get($content-grid-width-map, $key, 'content-grid-width');
+                    max-width: map-deep-get($content-grid-width-map, $key, 'content-grid-width');
+                }
+                
+                &.qodef-extended-grid--right {
+                    
+                    &:not(.qodef-extended-grid-reset--1024) {
+                        
+                        > .elementor-container {
+                            padding-left: calc((100% - #{map-deep-get($content-grid-width-map, $key, 'content-grid-width')}) / 2);
+                        }
+                    }
+                    
+                    &.qodef-extended-grid-reset--1024 {
+                        
+                        @if(map-deep-get($content-grid-width-map, $key, 'reset-grid') == true) {
+                            
+                            > .elementor-container {
+                                padding-left: 0;
+                            }
+                        } @else {
+                            
+                            > .elementor-container {
+                                padding-left: calc((100% - #{map-deep-get($content-grid-width-map, $key, 'content-grid-width')}) / 2);
+                            }
+                        }
+                    }
+                }
+                
+                &.qodef-extended-grid--left {
+                    
+                    &:not(.qodef-extended-grid-reset--1024) {
+                        
+                        > .elementor-container {
+                            padding-right: calc((100% - #{map-deep-get($content-grid-width-map, $key, 'content-grid-width')}) / 2);
+                        }
+                    }
+                    
+                    &.qodef-extended-grid-reset--1024 {
+                        
+                        @if(map-deep-get($content-grid-width-map, $key, 'reset-grid') == true) {
+                            
+                            > .elementor-container {
+                                padding-right: 0;
+                            }
+                        } @else {
+                            
+                            > .elementor-container {
+                                padding-right: calc((100% - #{map-deep-get($content-grid-width-map, $key, 'content-grid-width')}) / 2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // Global grid responsive style
+    @each $key, $values in $content-grid-width-responsive-map {
+        
+        @media only screen and (max-width: map-deep-get($content-grid-width-responsive-map, $key, 'responsive-break')) {
+            
+            > .elementor-container {
+                width: map-deep-get($content-grid-width-responsive-map, $key, 'content-grid-width');
+            }
+            
+            &.qodef-extended-grid--right {
+                
+                &:not(.qodef-extended-grid-reset--1024) {
+                    
+                    > .elementor-container {
+                        padding-right: calc((100% - #{map-deep-get($content-grid-width-responsive-map, $key, 'content-grid-width')}) / 2);
+                        padding-left: calc((100% - #{map-deep-get($content-grid-width-responsive-map, $key, 'content-grid-width')}) / 2);
+                    }
+                }
+                
+                &.qodef-extended-grid-reset--1024 {
+                    
+                    > .elementor-container {
+                        padding-right: 0;
+                        padding-left: 0;
+                    }
+                }
+            }
+            
+            &.qodef-extended-grid--left {
+                
+                &:not(.qodef-extended-grid-reset--1024) {
+                    
+                    > .elementor-container {
+                        padding-right: calc((100% - #{map-deep-get($content-grid-width-responsive-map, $key, 'content-grid-width')}) / 2);
+                        padding-left: calc((100% - #{map-deep-get($content-grid-width-responsive-map, $key, 'content-grid-width')}) / 2);
+                    }
+                }
+                
+                &.qodef-extended-grid-reset--1024 {
+
+                    > .elementor-container {
+                        padding-right: 0;
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.qodef-custom-side-padding {
+
+    &.qodef-extended-grid--left {
+
+        .elementor-element {
+
+            .elementor-element-populated {
+
+                @media only screen and (min-width: $screen-size-1681) {
+                    padding-left: 14% !important;
+                }
+
+                @media only screen and (min-width: $screen-size-1025) and (max-width: $screen-size-1680) {
+                    padding-left: 6% !important;
+                }
+            }
+        }
+    }
+
+    &.qodef-extended-grid--right {
+
+        .elementor-element {
+
+            .elementor-element-populated {
+
+                @media only screen and (min-width: $screen-size-1681) {
+                    padding-right: 14% !important;
+                }
+
+                @media only screen and (min-width: $screen-size-1025) and (max-width: $screen-size-1680) {
+                    padding-right: 6% !important;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $screen-size-768) {
+    
+    .qodef-custom-social-position.qodef-section-title {
+        position: fixed;
+        bottom: 105px;
+    }
+    
+    .qodef-custom-social-position .qodef-social-icons-group  {
+        position: fixed;
+        bottom: 63px;
+    }
+}
+
+.qodef-footer-custom-menu {
+    
+    .elementor-text-editor {
+    
+        a {
+            color: $additional-color;
+        
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $screen-size-1025) and (max-width: 1368px) {
+
+    .qodef-custom-grid-size {
+
+        &.elementor-section {
+
+            &.elementor-section-boxed {
+
+                > .elementor-container {
+                    width: 900px;
+                }
+            }
+        }
+    }
+}
+
+@include qodefScreenSize680 {
+
+    .qodef-custom-width-mobile {
+
+        &.qodef-elementor-content-grid {
+
+            > .elementor-container {
+                width: 100%;
+            }
+        }
+    }
+}

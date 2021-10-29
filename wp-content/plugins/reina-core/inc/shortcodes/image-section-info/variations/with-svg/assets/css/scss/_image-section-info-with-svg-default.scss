@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Image Section Info shortcode styles
+   ========================================================================== */
+
+.qodef-image-section-info {
+	
+	&.qodef-layout--with-svg {
+		
+		.qodef-m-content {
+			width: calc(100% - 203px);
+			padding: 0 103px;
+		}
+		
+		.qodef-m-inner {
+			color: $additional-background-color;
+
+			&:before {
+				content: '';
+				position: absolute;
+				display: flex;
+				top: -50px;
+				right: 0;
+				height: calc(100% + 100px);
+				width: 81.5%;
+				background-color: currentColor;
+				z-index: -1;
+			}
+		}
+		
+		.qodef-m-image {
+			width: 53.98%;
+		}
+		
+		.qodef-m-svg {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			z-index: 0;
+			@include qodefSvgStyle();
+		}
+		
+		&.qodef--left {
+			
+			.qodef-m-inner {
+				
+				&:before {
+					right: auto;
+					left: 0;
+				}
+			}
+		}
+	}
+}

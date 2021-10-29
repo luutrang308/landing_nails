@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Section Title shortcode styles
+   ========================================================================== */
+
+.qodef-section-title {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-heading {
+		position: relative;
+	}
+	
+	.qodef-m-title {
+		margin: 0;
+	}
+	
+	.qodef-m-subtitle {
+		position: absolute;
+		bottom: 85%;
+		left: -18px;
+		margin: 0;
+		transform: rotate(-90deg) translateX(-100%);
+		transform-origin: 0 100%;
+	}
+	
+	> .qodef-m-text {
+		margin: 25px 0 0;
+		font-size: 19px;
+		line-height: 1.842105263157895em;
+		font-weight: 300;
+	}
+	
+	.qodef-m-button {
+		margin: 45px 0 0;
+		
+		.qodef-m-text {
+			margin: 0;
+		}
+	}
+
+	&.qodef-alignment--left {
+		text-align: left;
+	}
+
+	&.qodef-alignment--center {
+		text-align: center;
+	}
+
+	&.qodef-alignment--right {
+		text-align: right;
+	}
+}

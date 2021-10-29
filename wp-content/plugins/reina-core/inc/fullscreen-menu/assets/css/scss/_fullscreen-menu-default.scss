@@ -1,0 +1,208 @@
+/* ==========================================================================
+   Full Screen Menu styles
+   ========================================================================== */
+
+#qodef-fullscreen-area {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #242121;
+	overflow-x: hidden !important;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 99; /* smaller than header, bigger than content */
+	backface-visibility: hidden;
+	
+	.qodef-content-grid {
+		height: 100%;
+
+		@media only screen and (min-width: $screen-size-1025) and (max-width: $screen-size-1440) {
+			width: 800px;
+		}
+		
+		.qodef-fullscreen-menu {
+			width: 100%;
+		}
+	}
+	
+	.qodef-fullscreen-menu-animate--in & {
+		animation: qode-fade-in .25s linear both;
+
+		.qodef-fullscreen-menu>ul>li {
+			@for $i from 1 through 20 {
+				$transition-delay: .1s + $i * .1s;
+
+				&:nth-child(#{$i}){
+					transition-delay: $transition-delay;
+				}
+			}
+
+			opacity: 1;
+		}
+	}
+	
+	.qodef-fullscreen-menu-animate--out & {
+		animation: qode-fade-out .25s linear forwards;
+	}
+	
+	#qodef-fullscreen-area-icon{
+		position: absolute;
+		width: 30%;
+		bottom: 120px;
+		right: 81px;
+
+		@media only screen and (min-width: $screen-size-1025) and (max-width: $screen-size-1680) {
+			bottom: 20px;
+		}
+
+		@include qodefScreenSize680 {
+			right: 5%;
+			bottom: 20px;
+		}
+	}
+}
+
+#qodef-fullscreen-area-inner {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+$menu-top-bottom-spacing: 0 0 0 30px;
+$menu-level-two-left-spacing: 20px;
+
+.qodef-fullscreen-menu {
+	position: relative;
+	top: 0;
+	margin: 0 auto;
+	text-align: left;
+	
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		
+		li {
+			position: relative;
+			margin: 0;
+			padding: 0;
+			
+			&.qodef--hide-link {
+				
+				> a {
+					cursor: default;
+				}
+			}
+		}
+		
+		&.sub-menu {
+			display: none;
+		}
+	}
+	
+	.qodef-menu-item-icon {
+		margin-right: 5px;
+	}
+	
+	.qodef-mega-menu-widget-holder {
+		display: none;
+	}
+	
+	> ul {
+		
+		> li {
+			opacity: 0;
+			transition: opacity .9s ease-out;
+			
+			> a {
+				color: #fff;
+				font-size: 55px;
+				font-family: $heading-font;
+				line-height: 75px;
+				font-style: normal;
+				letter-spacing: -0.003em;
+
+				@include qodefScreenSize680 {
+					font-size: 25px;
+					line-height: 35px;
+				}
+				
+				&:hover {
+					@include qodefMenuLevelOneHoverStyle($main-color);
+				}
+			}
+			
+			&.current-menu-ancestor,
+			&.current-menu-item {
+				
+				> a {
+					@include qodefMenuLevelOneHoverStyle($main-color);
+				}
+			}
+		}
+	}
+	
+	.qodef-drop-down-second-inner {
+		
+		> ul {
+			padding: $menu-top-bottom-spacing;
+
+			> li {
+
+				@include qodefScreenSize680 {
+
+					&:first-child {
+
+						> a {
+							margin-top: 12px;
+						}
+					}
+
+					&:last-child {
+
+						> a {
+							margin-bottom: 12px;
+						}
+					}
+				}
+			}
+		}
+		
+		ul {
+			padding-left: $menu-level-two-left-spacing;
+			
+			li {
+				
+				> a {
+					@include qodefMenuLevelTwoInitialStyle();
+					@include qodefMenuLevelTwoInitialTypographyStyle(#fff);
+					
+					&:hover {
+						@include qodefMenuLevelTwoHoverStyle();
+						color: #fff;
+					}
+				}
+				
+				&.current-menu-ancestor,
+				&.current-menu-item {
+					
+					> a {
+						@include qodefMenuLevelTwoHoverStyle();
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+.qodef-fullscreen-menu-animate--in {
+	.qodef-opener-icon .qodef-m-icon {
+		visibility: hidden;
+	}
+}

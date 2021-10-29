@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Banner shortcode responsive styles
+   ========================================================================== */
+
+.qodef-woo-product-banner {
+
+	@include qodefScreenSize680 {
+
+		&.qodef-layout--link-overlay {
+
+			.qodef-woo-product-content-inner {
+				right: 25px;
+				left: auto !important;
+			}
+		}
+
+		.qodef-woo-product-tagline {
+			text-align: right;
+		}
+
+		.qodef-woo-product-tagline,
+		.qodef-woo-product-title {
+			font-size: 25px;
+		}
+	}
+}

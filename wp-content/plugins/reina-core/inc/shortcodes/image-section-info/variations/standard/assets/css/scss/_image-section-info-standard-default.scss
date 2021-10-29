@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Image Section Info shortcode styles
+   ========================================================================== */
+
+$items-side-space: 45px;
+$overlay-offset: 50px;
+
+.qodef-image-section-info {
+	
+	&.qodef-layout--standard {
+		
+		.qodef-m-inner {
+			margin: 0 -#{$items-side-space};
+			
+			> * {
+				padding: 0 $items-side-space;
+			}
+		}
+
+		.qodef-m-image {
+			width: 57.3%;
+			flex-shrink: 0;
+			color: $additional-background-color;
+			
+			&:before {
+				content: '';
+				position: absolute;
+				top: -#{$overlay-offset};
+				right: calc(#{$overlay-offset} + #{$items-side-space});
+				height: calc(100% + 2*#{$overlay-offset});
+				width: 68.6%;
+				background-color: currentColor;
+				z-index: -1;
+			}
+		}
+		
+		.qodef-m-content {
+			display: inline-flex;
+			flex-direction: column;
+			justify-content: center;
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+
+		.qodef-working-hours-list {
+			margin-top: 25px;
+		}
+	}
+}

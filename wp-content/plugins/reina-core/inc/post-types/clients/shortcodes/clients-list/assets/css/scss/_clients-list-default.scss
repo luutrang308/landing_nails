@@ -1,0 +1,27 @@
+/* Clients list shortcode style - start */
+.qodef-clients-list {
+
+	.qodef-e {
+		@include qodefRelativeLayout();
+	}
+
+	@media only screen and (min-width: $screen-size-1025) and (max-width: $screen-size-1440) {
+
+		&.qodef-layout--columns {
+
+			&.qodef-gutter--huge {
+
+				&.qodef-col-num--6 {
+
+					> .qodef-grid-inner {
+
+						> .qodef-grid-item {
+							margin: 0 0 80px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* Clients list shortcode style - end */

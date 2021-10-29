@@ -1,0 +1,48 @@
+.qodef-banner {
+	
+	&.qodef-layout--simple {
+		
+		.qodef-m-content {
+			padding: 0;
+		}
+		
+		.qodef-m-content-inner {
+			width: 100%;
+			padding: 67px 0 66px;
+			background-color: transparent;
+			display: flex;
+			flex-direction: column;
+			
+			.qodef-m-title,
+			p.qodef-m-text,
+			.qodef-m-button{
+				padding: 0 16%;
+			}
+		}
+		
+		.qodef-m-svg {
+			position: relative;
+			display: block;
+			left: 50%;
+			transform: translateX(-50%);
+			margin-top: auto;
+			@include qodefSvgStyle();
+		}
+		
+		.qodef-m-button {
+			margin: 18px 0 0;
+
+			.qodef-layout--textual {
+
+				.qodef-m-text {
+					padding: 0;
+
+					.qodef-m-strip {
+						width: calc(100% + 32px);
+						left: -6px;
+					}
+				}
+			}
+		}
+	}
+}

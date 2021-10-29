@@ -1,0 +1,64 @@
+/* ==========================================================================
+# Search opener - begin
+========================================================================== */
+
+.qodef-search-opener {
+
+    .qodef-minimal-search--opened & {
+        opacity: 0;
+    }
+    
+    > * {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: inherit;
+        color: $heading-color;
+        transition: $color-transition;
+
+        .qodef-skin--light & {
+            color: #fff;
+        }
+    }
+
+    &:hover {
+
+        > * {
+            color: $heading-color;
+
+            .qodef-skin--light & {
+                color: #fff;
+            }
+        }
+
+        .qodef-search-opener-text {
+            &:before {
+                @include qodefMenuItemStripHover();
+            }
+        }
+    }
+    
+    &.qodef-source--icon-pack {
+        font-size: 23px;
+
+        .qodef-icon-linear-icons {
+            font-weight: 600;
+        }
+    }
+
+    .qodef-search-opener-text {
+        @include qodefH7Style(false);
+        line-height: 2.142857142857143em;
+        margin-left: 8px;
+        position: relative;
+
+        &:before {
+            @include qodefMenuItemStrip();
+            width: calc(100% + 13px);
+        }
+    }
+}
+
+/* ==========================================================================
+# Search opener - end
+========================================================================== */

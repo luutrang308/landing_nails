@@ -1,0 +1,71 @@
+/* ==========================================================================
+   #Back to Top styles - start
+   ========================================================================== */
+
+#qodef-back-to-top {
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	right: 25px;
+	bottom: 25px;
+	margin: 0;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 1000;
+	
+	.qodef-back-to-top-icon {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		font-family: $heading-font;
+		font-size: 21px;
+		font-weight: 700;
+		color: #fff;
+
+		&:before {
+			content: '';
+			@include qodefAbsoluteLayout();
+			background-color: $main-color;
+			border: 1px solid $main-color;
+			border-radius: 100%;
+			transition: transform .35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+			transform-origin: center;
+			will-change: transform;
+			transform: scale(1);
+			z-index: -1;
+		}
+
+		
+		* {
+			display: block;
+			line-height: inherit;
+		}
+	}
+	
+	&:hover {
+		
+		.qodef-back-to-top-icon {
+			&:before {
+				transform: scale(1.15);
+			}
+		}
+	}
+	
+	&.qodef--off {
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.15s ease, visibility .0s .15s;
+	}
+	
+	&.qodef--on {
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 0.3s ease;
+	}
+}
+
+/* ==========================================================================
+   #Back to Top styles - end
+   ========================================================================== */

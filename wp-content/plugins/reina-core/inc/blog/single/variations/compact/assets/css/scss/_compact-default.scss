@@ -1,0 +1,38 @@
+.qodef-blog {
+
+    &--compact {
+
+        #qodef-media {
+
+            .qodef-e {
+
+                &-content {
+                    padding: 52px 0 69px 0;
+                }
+            }
+        }
+
+        .qodef-author-info {
+
+            .qodef-m {
+
+                &-content {
+                    margin-right: 10%;
+                }
+            }
+        }
+
+        .qodef--single {
+            display: block;
+
+            @include qodefGridNarrow($narrow--default);
+
+            @each $key, $values in $content-grid-width-responsive-map {
+
+                @media only screen and (max-width: map-deep-get($content-grid-width-responsive-map, $key, 'responsive-break')) {
+                    max-width: map-deep-get($content-grid-width-responsive-map, $key, 'content-grid-width') !important;
+                }
+            }
+        }
+    }
+}

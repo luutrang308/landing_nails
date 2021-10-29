@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Booked appointments shortcode styles - begin
+   ========================================================================== */
+
+.qodef-booked-appointments {
+	
+	.booked-profile-appt-list {
+		
+		.appt-block {
+			
+			&.approved {
+				
+				.status-block {
+					background-color: $heading-color !important;
+				}
+			}
+			
+			&.pending {
+				
+				.status-block {
+					background-color: $main-color !important;
+				}
+			}
+		}
+	}
+}

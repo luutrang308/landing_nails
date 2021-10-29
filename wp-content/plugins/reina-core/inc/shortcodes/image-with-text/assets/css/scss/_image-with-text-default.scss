@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Image With Text shortcode styles
+   ========================================================================== */
+
+.qodef-image-with-text {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+		
+		a, img {
+			display: block;
+		}
+	}
+
+	&.qodef--has-border {
+
+		img {
+			border: 1px solid #ebf0f2;
+			box-sizing: border-box;
+		}
+	}
+	
+	.qodef-m-svg {
+		@include qodefRelativeLayout();
+		@include qodefSvgStyle(1.6);
+		pointer-events: all;
+		stroke: #b7b7b7;
+		transition: all $transition-timing;
+		
+		a {
+			display: block;
+			@include qodefAbsoluteLayout();
+		}
+	}
+	
+	.qodef-m-content {
+		@include qodefRelativeLayout();
+	}
+	
+	.qodef-m-tagline {
+		@include qodefH7Style($main-color);
+		display: block;
+		transition: $color-transition;
+	}
+
+	.qodef-m-title {
+		margin: 22px 0 0;
+
+		a {
+			color: inherit;
+		}
+	}
+	
+	.qodef-m-text {
+		margin: 12px 0 0;
+	}
+
+	&:hover {
+		.qodef-m-tagline{
+			color: $heading-color;
+		}
+
+		.qodef-m-svg {
+			stroke: $heading-color;
+		}
+	}
+	
+	&.qodef-alignment--center {
+		text-align: center;
+		
+		.qodef-m-image,
+		.qodef-m-svg {
+			
+			img,
+			svg {
+				margin: 0 auto;
+			}
+		}
+	}
+	
+	&.qodef-alignment--left {
+		text-align: left;
+	}
+	
+	&.qodef-alignment--right {
+		text-align: right;
+		
+		.qodef-m-image,
+		.qodef-m-svg {
+			
+			img,
+			svg {
+				margin-left: auto;
+			}
+		}
+	}
+}
