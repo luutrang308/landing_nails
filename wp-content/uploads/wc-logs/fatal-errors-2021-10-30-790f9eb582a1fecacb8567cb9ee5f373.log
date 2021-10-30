@@ -1,0 +1,12 @@
+2021-10-30T03:31:42+00:00 CRITICAL Object of class stdClass could not be converted to string in C:\xampp\htdocs\1_LANDING\1_Nails\wp-content\themes\reina\functions.php on line 318
+
+2021-10-30T03:40:37+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in C:\xampp\htdocs\1_LANDING\1_Nails\wp-content\themes\reina\functions.php:315
+Stack trace:
+#0 C:\xampp\htdocs\1_LANDING\1_Nails\wp-content\themes\reina\functions.php(329): reina_fetch_api('GET', 'shop-services', Array)
+#1 C:\xampp\htdocs\1_LANDING\1_Nails\wp-content\themes\reina\template-service-2.php(14): reina_service()
+#2 C:\xampp\htdocs\1_LANDING\1_Nails\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\1_LANDING\1_Nails\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\1_LANDING\1_Nails\index.php(17): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\1_LANDING\1_Nails\wp-content\themes\reina\functions.php on line 315
+

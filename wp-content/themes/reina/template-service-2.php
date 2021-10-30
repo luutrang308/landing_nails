@@ -14,11 +14,87 @@ get_header();
 <?php echo reina_service(); ?>
 
 <style>
+    /* ================================================== */
+    .pws_tabs_container ul.pws_tabs_controll {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .pws_tabs_container ul.pws_tabs_controll li a {
+        background: #fff;
+        font-size: 18px;
+        color: #405861;
+        border-bottom: 4px solid transparent;
+        transition: all .5s ease;
+    }
+
+    .pws_tabs_container ul.pws_tabs_controll li a:hover {
+        background: #fff;
+        border-bottom: 4px solid #b0d8e8;
+    }
+
+    .pws_tabs_container ul.pws_tabs_controll li a.pws_tab_active {
+        font-weight: 600;
+        border-bottom: 4px solid #b0d8e8;
+    }
+
+    .list_product_item ul {
+        display: flex;
+        width: 100%;
+        padding: 5px 0;
+        margin: 0 auto;
+        list-style-type: none;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .list_product_item ul li {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 0;
+        margin-bottom: 20px;
+        width: 46%;
+        list-style-type: none;
+        padding: 5px 0;
+        cursor: pointer;
+    }
+
+    .list_product_item ul li .name,
+    .list_product_item ul li .price {
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    @media (max-width:768px) {
+        .pws_tabs_list {
+            padding: 1.2rem 0;
+        }
+
+        .pws_tabs_container ul.pws_tabs_controll li a {
+            font-size: 16px;
+        }
+
+        .list_product_item ul li .name,
+        .list_product_item ul li .price {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width:600px) {
+        .list_product_item ul li {
+            width: 100%;
+        }
+    }
+
+    /* ================================================== */
+
     .page-template-template-service .qodef-page-title {
         display: none;
     }
 
-    .page-template-template-service #qodef-page-inner {
+    #qodef-page-inner {
         padding: 30px 0;
     }
 

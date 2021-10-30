@@ -124,6 +124,7 @@ if (!class_exists('Reina_Handler')) {
 			// Enqueue 3rd party plugins style
 			wp_enqueue_style('swiper', REINA_ASSETS_ROOT . '/plugins/swiper/swiper.min.css');
 			wp_enqueue_style('magnific-popup', REINA_ASSETS_ROOT . '/plugins/magnific-popup/magnific-popup.css');
+			wp_enqueue_style('pwstabs-style', REINA_INC_ROOT . '/pwstabs/jquery.pwstabs.min.css');
 		}
 
 		function include_plugins_scripts()
@@ -137,6 +138,7 @@ if (!class_exists('Reina_Handler')) {
 			wp_enqueue_script('jquery-appear', REINA_ASSETS_ROOT . '/plugins/appear/jquery.appear.js', array($js_3rd_party_dependency), false, true);
 			wp_enqueue_script('swiper', REINA_ASSETS_ROOT . '/plugins/swiper/swiper.min.js', array($js_3rd_party_dependency), false, true);
 			wp_enqueue_script('jquery-magnific-popup', REINA_ASSETS_ROOT . '/plugins/magnific-popup/jquery.magnific-popup.min.js', array($js_3rd_party_dependency), false, true);
+			wp_enqueue_script('pwstabs-script', REINA_INC_ROOT . '/pwstabs/jquery.pwstabs.min.js', array($js_3rd_party_dependency), false, true);
 		}
 
 		function add_pingback_header()
@@ -312,13 +314,51 @@ if (!function_exists('reina_fetch_api')) {
 		if (!empty($request)) {
 			$result = json_decode($request['body']);
 		}
-
+		if (isset($_GET['h'])) {
+			print_r('<pre>');
+			print_r($result);
+			die;
+		}
 		return $result;
 	}
 }
 
 if (!function_exists('reina_service')) {
 	function reina_service()
+	{
+		$data = reina_fetch_api('GET', 'shop-services', ['locationCode' => 7662]);
+		if (isset($data->ok) && $data->ok == 1) :
+			$categoies = $data->data; ?>
+			<div class="element_list_pro">
+				<div class="list_product_item">
+					<?php foreach ($categoies as $category) : ?>
+						<ul data-pws-tab="<?= $category->id ?>" data-pws-tab-name="<?= $category->categoryName ?>">
+							<?php foreach ($category->services as $service) : ?>
+								<li class="item">
+									<div class="name"><?= $service->name ?></div>
+									<div class="price">$<?= $service->price ?></div>
+								</li>
+							<?php endforeach ?>
+						</ul>
+					<?php endforeach ?>
+				</div>
+			</div>
+			<script>
+				jQuery(document).ready(function($) {
+					$('.list_product_item').pwstabs({
+						effect: 'scale',
+						defaultTab: 1,
+						containerWidth: '100%'
+					});
+				});
+			</script>
+		<?php
+		endif;
+	}
+}
+
+if (!function_exists('reina_service_bk')) {
+	function reina_service_bk()
 	{
 		$data = reina_fetch_api('GET', 'shop-services', ['locationCode' => 7662]);
 		if (isset($data->ok) && $data->ok == 1) :
