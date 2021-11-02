@@ -366,7 +366,7 @@ if (!function_exists('reina_service_bk')) {
 								<li class="phela__<?= $category->id ?>">
 									<img src="<?= baseUrl ?>/wp-content/uploads/2020/12/h4-logo-main.png">
 									<a class="nav-link" href="#phela__<?= $category->id ?>"><?= $category->categoryName ?></a>
-							 	</li>
+								</li>
 							<?php endforeach ?>
 						</ul>
 					</div>
