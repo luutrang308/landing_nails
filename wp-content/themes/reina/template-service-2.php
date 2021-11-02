@@ -19,6 +19,7 @@ get_header();
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
+        border-bottom: 1px solid #e5ecef; 
     }
 
     .pws_tabs_container ul.pws_tabs_controll li a {
@@ -65,6 +66,10 @@ get_header();
     .list_product_item ul li .price {
         font-weight: 600;
         font-size: 18px;
+        color: #222;
+    }
+    .page-template-template-service-2 .qodef-page-title {
+        display: none;
     }
 
     @media (max-width:768px) {
@@ -285,6 +290,23 @@ get_header();
         float: right;
         font-weight: bold;
         color: #405861;
+    }
+    .title_nails {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .title_nails h2 {
+        position: relative;
+    }
+    .title_nails h2:before {
+        position: absolute;
+        content: '';
+        width: 100px;
+        height: 5px;
+        background: #b0d8e8;
+        bottom: -10px;
+        left: 50%;
+        transform: translate(-50% , 0);
     }
 </style>
 

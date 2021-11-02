@@ -329,6 +329,10 @@ if (!function_exists('reina_service')) {
 		$data = reina_fetch_api('GET', 'shop-services', ['locationCode' => 7662]);
 		if (isset($data->ok) && $data->ok == 1) :
 			$categoies = $data->data; ?>
+			<div class="title_nails">
+				<h2>Service</h2>
+				<p>Premium beauty products used to create the most effective and comfortable results</p>
+			</div>
 			<div class="element_list_pro">
 				<div class="list_product_item">
 					<?php foreach ($categoies as $category) : ?>
