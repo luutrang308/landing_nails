@@ -314,11 +314,6 @@ if (!function_exists('reina_fetch_api')) {
 		if (!empty($request)) {
 			$result = json_decode($request['body']);
 		}
-		if (isset($_GET['h'])) {
-			print_r('<pre>');
-			print_r($result);
-			die;
-		}
 		return $result;
 	}
 }
@@ -326,7 +321,7 @@ if (!function_exists('reina_fetch_api')) {
 if (!function_exists('reina_service')) {
 	function reina_service()
 	{
-		$data = reina_fetch_api('GET', 'shop-services', ['locationCode' => 7662]);
+		$data = reina_fetch_api('GET', 'shop-services', ['locationCode' => 2301]);
 		if (isset($data->ok) && $data->ok == 1) :
 			$categoies = $data->data; ?>
 			<div class="element_list_pro">
@@ -371,7 +366,7 @@ if (!function_exists('reina_service_bk')) {
 								<li class="phela__<?= $category->id ?>">
 									<img src="<?= baseUrl ?>/wp-content/uploads/2020/12/h4-logo-main.png">
 									<a class="nav-link" href="#phela__<?= $category->id ?>"><?= $category->categoryName ?></a>
-								</li>
+							 	</li>
 							<?php endforeach ?>
 						</ul>
 					</div>
